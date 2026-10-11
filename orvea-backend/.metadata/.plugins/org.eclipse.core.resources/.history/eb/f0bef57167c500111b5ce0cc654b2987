@@ -1,0 +1,5 @@
+package com.hms.auth.entity;
+
+public class Role {
+
+}

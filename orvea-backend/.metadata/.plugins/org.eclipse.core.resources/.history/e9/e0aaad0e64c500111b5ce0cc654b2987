@@ -1,0 +1,5 @@
+package com.hms.auth.enums;
+
+public class SessionStatus {
+
+}

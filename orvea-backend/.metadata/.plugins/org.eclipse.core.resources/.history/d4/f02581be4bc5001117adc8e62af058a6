@@ -1,0 +1,83 @@
+package com.hms.security;
+
+import java.util.Date;
+import java.util.List;
+import java.util.UUID;
+
+import javax.crypto.SecretKey;
+
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.JwtException;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.io.Decoders;
+import io.jsonwebtoken.security.Keys;
+import jakarta.annotation.PostConstruct;
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
+public class JwtTokenUtil {
+
+    private final JwtProperties props;
+    private SecretKey key;
+
+    @PostConstruct
+    void init() {
+        this.key = Keys.hmacShaKeyFor(Decoders.BASE64.decode(props.getSecret()));
+    }
+
+    public String generateAccessToken(AuthenticatedUser user, String sessionId) {
+        long now = System.currentTimeMillis();
+        return Jwts.builder()
+                .id(UUID.randomUUID().toString())
+                .issuer(props.getIssuer())
+                .subject(user.username())
+                .claim("uid", user.userId())
+                .claim("cid", user.clinicId())
+                .claim("roles", user.roles())
+                .claim("perms", user.permissions())
+                .claim("sid", sessionId)
+                .claim("typ", "access")
+                .issuedAt(new Date(now))
+                .expiration(new Date(now + props.getAccessTokenExpiryMs()))
+                .signWith(key)
+                .compact();
+    }
+
+    public String generateRefreshToken(String username, String sessionId) {
+        long now = System.currentTimeMillis();
+        return Jwts.builder()
+                .id(UUID.randomUUID().toString())
+                .issuer(props.getIssuer())
+                .subject(username)
+                .claim("sid", sessionId)
+                .claim("typ", "refresh")
+                .issuedAt(new Date(now))
+                .expiration(new Date(now + props.getRefreshTokenExpiryMs()))
+                .signWith(key)
+                .compact();
+    }
+
+    public Claims parse(String token) {
+        return Jwts.parser().verifyWith(key).requireIssuer(props.getIssuer())
+                .build().parseSignedClaims(token).getPayload();
+    }
+
+    public boolean isValid(String token) {
+        try {
+            parse(token);
+            return true;
+        } catch (JwtException | IllegalArgumentException e) {
+            return false;
+        }
+    }
+
+    @SuppressWarnings("unchecked")
+    public AuthenticatedUser toUser(Claims c) {
+        return new AuthenticatedUser(
+                c.get("uid", Long.class),
+                c.getSubject(),
+                c.get("cid", Long.class),
+                (List<String>) c.get("roles", List.class),
+                (List<String>) c.get("perms", List.class));
+    }
+}

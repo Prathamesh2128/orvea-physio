@@ -1,0 +1,5 @@
+package com.hms.auth.controller;
+
+public class AuthController {
+
+}

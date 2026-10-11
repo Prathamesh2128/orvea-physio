@@ -1,0 +1,21 @@
+package com.hms.auth.entity;
+
+import org.hibernate.annotations.SQLRestriction;
+
+import com.hms.common.entity.BaseEntity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
+import lombok.Getter;
+import lombok.Setter;
+
+@SuppressWarnings("serial")
+@Getter
+@Setter
+@Entity
+@Table(name = "refresh_tokens", uniqueConstraints = @UniqueConstraint(columnNames = "token_hash"))
+@SQLRestriction("is_deleted = false")
+public class RefreshToken extends BaseEntity {
+
+}

@@ -1,0 +1,47 @@
+package com.hms.auth.service;
+
+import java.time.LocalDateTime;
+
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.hms.auth.dto.LoginRequest;
+import com.hms.auth.dto.TokenResponse;
+import com.hms.auth.entity.User;
+import com.hms.auth.repository.UserRepository;
+import com.hms.common.exception.BusinessException;
+import com.hms.common.exception.ForbiddenException;
+import com.hms.common.exception.UnauthorizedException;
+
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class AuthService {
+
+	private final PasswordEncoder passwordEncoder;
+	private final UserRepository userRepository;
+
+	// noRollbackFor: failed-attempt counters must be committed even when we throw
+	@Transactional(noRollbackFor = BusinessException.class)
+	public TokenResponse login(LoginRequest req, String ip, String userAgent) {
+		User user = userRepository
+				.findByUsernameIgnoreCaseOrEmailIgnoreCase(req.usernameOrEmail(), req.usernameOrEmail())
+				.orElseThrow(() -> new UnauthorizedException("Invalid credentials"));
+
+		LocalDateTime now = LocalDateTime.now();
+		if (!user.isEnabled()) {
+			throw new ForbiddenException("Account is disables");
+		}
+		if (user.getLockedUntil() != null && user.getLockedUntil().isAfter(now)) {
+			throw new ForbiddenException("Account locked. Try again after " + user.getLockedUntil());
+		}
+		if (!passwordEncoder.matches(req.password(), user.getPasswordHash())) {
+			registerFailure(user, now);
+			throw new UnauthorizedException("Invalid credentials");
+		}
+
+		return null;
+	}
+}

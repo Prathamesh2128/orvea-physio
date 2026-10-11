@@ -1,0 +1,11 @@
+package com.hms.common.exception;
+
+import org.springframework.http.HttpStatus;
+
+public class DuplicateResourceException extends BusinessException {
+	private static final long serialVersionUID = 1L;
+
+	public DuplicateResourceException(String message) {
+		super(message, HttpStatus.CONFLICT);
+	}
+}

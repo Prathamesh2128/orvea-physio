@@ -1,0 +1,5 @@
+package com.hms.exception;
+
+public class GlobalExceptionHandler {
+
+}

@@ -1,0 +1,69 @@
+server:
+  port: 8000
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      server:
+        webmvc:
+          routes:
+            - id: auth-service
+              uri: lb://auth-service
+              predicates:
+                - Path=/api/v1/auth/**, /api/v1/users/**, /api/v1/roles/**, /api/v1/permissions/**, /api/v1/sessions/**
+            - id: patient-service
+              uri: lb://patient-service
+              predicates:
+                - Path=/api/v1/patients/**
+            - id: staff-service
+              uri: lb://staff-service
+              predicates:
+                - Path=/api/v1/staff/**, /api/v1/doctors/**
+            - id: appointment-service
+              uri: lb://appointment-service
+              predicates:
+                - Path=/api/v1/appointments/**, /api/v1/treatments/**
+            - id: oncology-service
+              uri: lb://oncology-service
+              predicates:
+                - Path=/api/v1/oncology/**, /api/v1/lymphedema/**
+            - id: billing-service
+              uri: lb://billing-service
+              predicates:
+                - Path=/api/v1/billing/**, /api/v1/invoices/**, /api/v1/payments/**
+            - id: notification-service
+              uri: lb://notification-service
+              predicates:
+                - Path=/api/v1/notifications/**
+            - id: audit-service
+              uri: lb://audit-service
+              predicates:
+                - Path=/api/v1/audit/**
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${EUREKA_USER:eureka}:${EUREKA_PASSWORD:eureka123}@${EUREKA_HOST:localhost}:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+physio:
+  jwt:
+    # Base64 256-bit+ key. Same value in the gateway and auth-service. Override in prod via env var.
+    secret: ${JWT_SECRET:cGh5c2lvLWhtcy1zdXBlci1zZWNyZXQta2V5LWNoYW5nZS1pbi1wcm9kdWN0aW9uLTI1Ng==}
+    issuer: hms-physio
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,gateway
+  endpoint:
+    health:
+      show-details: always

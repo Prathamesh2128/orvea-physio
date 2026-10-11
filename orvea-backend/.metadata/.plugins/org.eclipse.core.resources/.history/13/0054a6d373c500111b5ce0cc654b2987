@@ -1,0 +1,13 @@
+package com.hms.auth.service;
+
+import org.springframework.stereotype.Service;
+
+import com.hms.auth.dto.LoginRequest;
+import com.hms.auth.dto.TokenResponse;
+
+@Service
+public class AuthService {
+	public TokenResponse login(LoginRequest req, String ip, String userAgent) {
+		return null;
+	}
+}

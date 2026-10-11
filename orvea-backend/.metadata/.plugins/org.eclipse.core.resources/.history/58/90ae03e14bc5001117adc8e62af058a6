@@ -1,0 +1,65 @@
+package com.hms.security;
+
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.UUID;
+
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.filter.OncePerRequestFilter;
+
+import com.hms.constants.AppConstants;
+
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import lombok.extern.slf4j.Slf4j;
+
+/**
+ * Lightweight check: trusts identity headers injected by the API gateway
+ * (gateway has already validated the JWT and the Redis revocation list).
+ * NOT a Spring bean on purpose - it is added explicitly in each SecurityFilterChain.
+ */
+@Slf4j
+public class GatewayHeaderAuthenticationFilter extends OncePerRequestFilter {
+
+    @Override
+    protected void doFilterInternal(HttpServletRequest req, HttpServletResponse res, FilterChain chain)
+            throws ServletException, IOException {
+        String uid = req.getHeader(AppConstants.HEADER_USER_ID);
+        if (uid != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+            try {
+                String clinic = req.getHeader(AppConstants.HEADER_CLINIC_ID);
+                AuthenticatedUser user = new AuthenticatedUser(
+                        UUID.fromString(uid),
+                        req.getHeader(AppConstants.HEADER_USERNAME),
+                        clinic == null || clinic.isBlank() ? null : UUID.fromString(clinic),
+                        req.getHeader(AppConstants.HEADER_SESSION_ID),
+                        split(req.getHeader(AppConstants.HEADER_ROLES)),
+                        split(req.getHeader(AppConstants.HEADER_PERMISSIONS)));
+
+                List<GrantedAuthority> authorities = new ArrayList<>();
+                user.roles().forEach(r -> authorities.add(new SimpleGrantedAuthority("ROLE_" + r)));
+                user.permissions().forEach(p -> authorities.add(new SimpleGrantedAuthority(p)));
+
+                SecurityContextHolder.getContext().setAuthentication(
+                        new UsernamePasswordAuthenticationToken(user, null, authorities));
+            } catch (IllegalArgumentException e) {
+                log.warn("Ignoring malformed identity headers: {}", e.getMessage());
+            }
+        }
+        chain.doFilter(req, res);
+    }
+
+    private static List<String> split(String v) {
+        if (v == null || v.isBlank()) return List.of();
+        return Arrays.stream(v.split(",")).map(String::trim).filter(s -> !s.isEmpty()).toList();
+    }
+}

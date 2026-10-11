@@ -1,0 +1,16 @@
+package com.hms.auth.repository;
+
+import java.util.Optional;
+import java.util.UUID;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.hms.auth.entity.User;
+
+public interface UserRepository extends JpaRepository<User, UUID> {
+	Optional<User> findByUsernameIgnoreCaseOrEmailIgnoreCase(String usernmae, String email);
+
+	boolean existsByUsernameIgnoreCase(String username);
+
+	boolean existsByEmailIgnoreCase(String email);
+}

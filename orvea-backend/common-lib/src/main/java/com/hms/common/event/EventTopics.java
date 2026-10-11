@@ -1,0 +1,11 @@
+package com.hms.common.event;
+
+public final class EventTopics {
+	private EventTopics() { }
+
+	public static final String NOTIFICATION = "physio.notification";
+	public static final String AUDIT = "physio.audit";
+	public static final String APPOINTMENT = "physio.appointment";
+	public static final String BILLING = "physio.billing";
+	public static final String PATIENT = "physio.patient";
+}

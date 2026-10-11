@@ -1,0 +1,17 @@
+package com.hms.auth.util;
+
+import java.util.Set;
+import java.util.stream.Collectors;
+
+import com.hms.auth.entity.Role;
+import com.hms.auth.entity.User;
+import com.hms.common.enums.RoleType;
+
+public final class UserMapper {
+	private UserMapper() {
+	}
+
+	public static Set<RoleType> roleNames(User u) {
+		return u.getRoles().stream().map(Role::getName).collect(Collectors.toSet());
+	}
+}

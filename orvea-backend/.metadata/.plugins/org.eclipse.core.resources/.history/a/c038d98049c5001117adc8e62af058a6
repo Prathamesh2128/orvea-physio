@@ -1,0 +1,8 @@
+package com.hms.config;
+
+public class Snippet {
+	public static void main(String[] args) {
+		CommonAutoConfiguration
+	}
+}
+

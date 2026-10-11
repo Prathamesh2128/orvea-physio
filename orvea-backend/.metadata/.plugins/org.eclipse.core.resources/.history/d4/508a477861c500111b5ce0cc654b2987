@@ -1,0 +1,30 @@
+server:
+  port: 8001
+
+# --- ADD THIS LOGGING BLOCK HERE ---
+logging:
+  level:
+    org.springframework.security: DEBUG
+# -----------------------------------
+
+spring:
+  application:
+    name: AUTH-SERVICE
+
+  datasource:
+     url: jdbc:mysql://${DB_HOST:localhost}:3306/hms_auth_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
+     username: ${DB_USER}
+     password: ${DB_PASS}
+     driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

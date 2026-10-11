@@ -1,0 +1,49 @@
+package com.hms.auth.service;
+
+import java.util.List;
+import java.util.Set;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.hms.auth.dto.CreateUserRequest;
+import com.hms.auth.dto.UserResponse;
+import com.hms.auth.entity.Role;
+import com.hms.auth.repository.RoleRepository;
+import com.hms.auth.repository.UserRepository;
+import com.hms.common.enums.RoleType;
+import com.hms.common.exception.DuplicateResourceException;
+import com.hms.common.exception.ForbiddenException;
+import com.hms.common.security.SecurityUtils;
+
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class UserService {
+
+	private final UserRepository userRepository;
+	private final RoleRepository roleRepository;
+	@Transactional
+	public UserResponse create(CreateUserRequest req) {
+		if (userRepository.existsByUsernameIgnoreCase(req.username())) {
+			throw new DuplicateResourceException("Username already taken");
+		}
+		if (userRepository.existsByEmailIgnoreCase(req.email())) {
+			throw new DuplicateResourceException("Email already register");
+		}
+		Set<Role> roles = resolveRoles(req.roles());
+		return null;
+	}
+	
+	//Helper methods
+	private Set<Role> resolveRoles (Set<RoleType> types){
+		boolean callerIsSuperAdmin = SecurityUtils.currentUser().map(u -> u.roles().contains(RoleType.SUPER_ADMIN.name())).orElse(false);
+		
+		if(types.contains(RoleType.SUPER_ADMIN)&& !callerIsSuperAdmin) {
+			throw new ForbiddenException("Only a SUPER_ADMIN can assign the SUPER_ADMIN role");
+		}
+		
+		List<Role> found = roleRepository.findByNameIn(types);
+	}
+}

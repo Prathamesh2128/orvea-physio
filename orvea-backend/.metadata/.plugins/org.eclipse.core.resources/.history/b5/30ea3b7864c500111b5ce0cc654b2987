@@ -1,0 +1,7 @@
+package com.hms.auth.entity;
+
+import com.hms.enums.PermissionType;
+
+public class Permission {
+	private PermissionType name;
+}

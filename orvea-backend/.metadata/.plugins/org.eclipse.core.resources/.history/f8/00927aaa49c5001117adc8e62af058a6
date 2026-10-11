@@ -1,0 +1,5 @@
+package com.hms.api;
+
+public class ErrorDetail {
+
+}
