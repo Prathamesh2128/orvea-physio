@@ -34,7 +34,7 @@ physio:
     secret: ${JWT_SECRET:cGh5c2lvLWhtcy1zdXBlci1zZWNyZXQta2V5LWNoYW5nZS1pbi1wcm9kdWN0aW9uLTI1Ng==}
     issuer: physio-hms
     access-token-expiry-ms: 900000
-    refresh-token-expory-ms: 604800000
+    refresh-token-expiry-ms: 604800000
   bootstrap:
     admin:
       username: ${BOOTSTRAP_ADMIN_USER:superadmin}
