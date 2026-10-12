@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hms.auth.dto.LoginRequest;
+import com.hms.auth.dto.RefreshRequest;
 import com.hms.auth.dto.TokenResponse;
 import com.hms.auth.service.AuthService;
 import com.hms.common.api.ApiResponse;
@@ -28,6 +29,13 @@ public class AuthController {
 		return ApiResponse.ok("Login successfull", data);
 	}
 
+	@PostMapping("/refresh")
+	public ApiResponse<TokenResponse> refresh(@Valid @RequestBody RefreshRequest req) {
+		TokenResponse data = authService.refresh(req.refreshToken());
+		return ApiResponse.ok(data);
+	}
+
+	// Helper Methods
 	private String clientIp(HttpServletRequest req) {
 		String xff = req.getHeader("X-Forwarded-For");
 		return xff != null && !xff.isBlank() ? xff.split(",")[0].trim() : req.getRemoteAddr();

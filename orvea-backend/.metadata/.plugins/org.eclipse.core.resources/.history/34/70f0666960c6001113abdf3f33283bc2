@@ -1,0 +1,164 @@
+package com.hms.auth.service;
+
+import java.time.LocalDateTime;
+
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.hms.auth.dto.LoginRequest;
+import com.hms.auth.dto.TokenResponse;
+import com.hms.auth.entity.RefreshToken;
+import com.hms.auth.entity.User;
+import com.hms.auth.entity.UserSession;
+import com.hms.auth.enums.SessionStatus;
+import com.hms.auth.repository.RefreshTokenRepository;
+import com.hms.auth.repository.UserRepository;
+import com.hms.auth.repository.UserSessionRepository;
+import com.hms.auth.util.HashUtil;
+import com.hms.auth.util.UserMapper;
+import com.hms.common.exception.BusinessException;
+import com.hms.common.exception.ForbiddenException;
+import com.hms.common.exception.UnauthorizedException;
+import com.hms.common.security.AuthenticatedUser;
+import com.hms.common.security.JwtProperties;
+import com.hms.common.security.JwtTokenUtil;
+
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.JwtException;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@Service
+@RequiredArgsConstructor
+public class AuthService {
+
+	static final int MAX_FAILED_ATTEMPTS = 5;
+	static final int LOCK_MINUTES = 15;
+
+	private final PasswordEncoder passwordEncoder;
+	private final JwtProperties jwtProperties;
+	private final JwtTokenUtil jwtTokenUtil;
+	private final UserRepository userRepository;
+	private final UserSessionRepository sessionRepository;
+	private final RefreshTokenRepository refreshTokenRepository;
+
+	// noRollbackFor: failed-attempt counters must be committed even when we throw
+	@Transactional(noRollbackFor = BusinessException.class)
+	public TokenResponse login(LoginRequest req, String ip, String userAgent) {
+		User user = userRepository
+				.findByUsernameIgnoreCaseOrEmailIgnoreCase(req.usernameOrEmail(), req.usernameOrEmail())
+				.orElseThrow(() -> new UnauthorizedException("Invalid credentials"));
+
+		LocalDateTime now = LocalDateTime.now();
+		if (!user.isEnabled()) {
+			throw new ForbiddenException("Account is disables");
+		}
+		if (user.getLockedUntil() != null && user.getLockedUntil().isAfter(now)) {
+			throw new ForbiddenException("Account locked. Try again after " + user.getLockedUntil());
+		}
+		if (!passwordEncoder.matches(req.password(), user.getPasswordHash())) {
+			registerFailure(user, now);
+			throw new UnauthorizedException("Invalid credentials");
+		}
+
+		user.setFailedLoginAttempts(0);
+		user.setLockedUntil(null);
+		user.setLastLoginAt(now);
+
+		UserSession session = new UserSession();
+		session.setUser(user);
+		session.setClinicId(user.getClinicId());
+		session.setIpAddress(ip);
+		session.setUserAgent(userAgent == null ? null : userAgent.substring(0, Math.min(255, userAgent.length())));
+		session.setLoginAt(now);
+		session.setLastAccessAt(now);
+		session.setExpiresAt(now.plusNanos(jwtProperties.getRefreshTokenExpiryMs() * 1_000_000));
+		session.setStatus(SessionStatus.ACTIVE);
+		session = sessionRepository.saveAndFlush(session);
+		return issueTokens(user, session);
+	}
+
+	@Transactional(noRollbackFor = BusinessException.class)
+	public TokenResponse refresh(String refreshToken) {
+		Claims claims;
+		try {
+			claims = jwtTokenUtil.parse(refreshToken);
+		} catch (JwtException | IllegalArgumentException e) {
+			throw new UnauthorizedException("Invalid refresh token");
+		}
+		if (!"refresh".equals(claims.get("typ", String.class))) {
+			throw new UnauthorizedException("Invalid token type");
+		}
+
+		RefreshToken stored = refreshTokenRepository.findByTokenHash(HashUtil.sha256(refreshToken))
+				.orElseThrow(() -> new UnauthorizedException("Refresh token not recognised"));
+
+		UserSession session = stored.getSession();
+		LocalDateTime now = LocalDateTime.now();
+
+		if (stored.isRevoked()) {
+			// A rotated token was presented again => likely stolen. Kill the whole session.
+			terminateSession(session, "Refresh token reuse detected");
+			throw new UnauthorizedException("Refresh token reuse detected; session terminated");
+		}
+
+		if (session.getStatus() != SessionStatus.ACTIVE || stored.getExpiresAt().isBefore(now)) {
+			throw new UnauthorizedException("Session expired");
+		}
+		User user = stored.getUser();
+		if (!user.isEnabled()) {
+			throw new ForbiddenException("Account is disabled");
+		}
+
+		stored.setRevoked(true);
+		stored.setRevokedAt(now);
+		session.setLastAccessAt(now);
+
+		TokenResponse response = issueTokens(user, session);
+		stored.setReplacedByHash(HashUtil.sha256(response.refreshToken()));
+		return response;
+	}
+
+	// Helper Methods
+	private void registerFailure(User user, LocalDateTime now) {
+		int attempts = user.getFailedLoginAttempts() + 1;
+		user.setFailedLoginAttempts(attempts);
+		if (attempts >= MAX_FAILED_ATTEMPTS) {
+			user.setLockedUntil(now.plusMinutes(LOCK_MINUTES));
+			user.setFailedLoginAttempts(0);
+			log.warn("User {} locked for {} minutes", user.getUsername(), LOCK_MINUTES);
+		}
+	}
+
+	private TokenResponse issueTokens(User user, UserSession session) {
+		String sid = session.getId().toString();
+		AuthenticatedUser principal = new AuthenticatedUser(user.getId(), user.getUsername(), user.getClinicId(), sid,
+				UserMapper.roleNames(user).stream().map(Enum::name).sorted().toList(),
+				UserMapper.permissionNames(user));
+
+		String access = jwtTokenUtil.generateAccessToken(principal);
+		String refresh = jwtTokenUtil.generateRefreshToken(user.getUsername(), sid);
+
+		RefreshToken rt = new RefreshToken();
+		rt.setClinicId(user.getClinicId());
+		rt.setTokenHash(HashUtil.sha256(refresh));
+		rt.setSession(session);
+		rt.setUser(user);
+		rt.setExpiresAt(LocalDateTime.now().plusNanos(jwtProperties.getRefreshTokenExpiryMs() * 1_000_000));
+
+		refreshTokenRepository.save(rt);
+
+		return new TokenResponse(access, refresh, "Bearer", jwtProperties.getAccessTokenExpiryMs() / 1000, sid,
+				UserMapper.toSummary(user));
+	}
+
+	private void terminateSession(UserSession session, String reason) {
+		session.setStatus(SessionStatus.REVOKED);
+		session.setRevokedAt(LocalDateTime.now());
+		session.setRevokeReason(reason);
+		refreshTokenRepository.revokeAllBySession(session.getId(), LocalDateTime.now());
+		blacklist.revoke(session.getId().toString());
+	}
+}

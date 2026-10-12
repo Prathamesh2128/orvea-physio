@@ -1,0 +1,5 @@
+package com.hms.auth.dto;
+
+public record RefreshRequest() {
+
+}

@@ -276,3 +276,66 @@
 2026-10-11 19:01:05.263: [INFO] BookmarksLoadDropped droppedNodes=0
 2026-10-11 19:01:05.263: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
 2026-10-11 19:06:00.645: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-12 16:42:34.478: [INFO] CurrentProfilePath: D:\Prathamesh\Project\ORVÉA\orvea-backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-10-12 16:42:34.478: [INFO] Profiles total count: 1
+2026-10-12 16:42:34.478: [INFO] Profile: name=Profile 1 path=D:\Prathamesh\Project\ORVÉA\orvea-backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=null
+2026-10-12 16:42:34.478: [INFO] LastUsedProfileDir: D:\Prathamesh\Project\ORVÉA\orvea-backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-10-12 16:42:34.478: [INFO] OnDoneLoading sync enabled: 0
+2026-10-12 16:42:34.478: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-12 16:42:34.478: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-12 16:42:34.478: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-12 16:42:35.789: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-12 16:43:27.380: [INFO] CurrentProfilePath: D:\Prathamesh\Project\ORVÉA\orvea-backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-10-12 16:43:27.380: [INFO] Profiles total count: 1
+2026-10-12 16:43:27.380: [INFO] Profile: name=Profile 1 path=D:\Prathamesh\Project\ORVÉA\orvea-backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=null
+2026-10-12 16:43:27.380: [INFO] LastUsedProfileDir: D:\Prathamesh\Project\ORVÉA\orvea-backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-10-12 16:43:27.380: [INFO] OnDoneLoading sync enabled: 0
+2026-10-12 16:43:27.380: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-12 16:43:27.380: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-12 16:43:27.380: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-12 16:43:27.484: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-12 16:44:32.710: [INFO] CurrentProfilePath: D:\Prathamesh\Project\ORVÉA\orvea-backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-10-12 16:44:32.710: [INFO] Profiles total count: 1
+2026-10-12 16:44:32.710: [INFO] Profile: name=Profile 1 path=D:\Prathamesh\Project\ORVÉA\orvea-backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=null
+2026-10-12 16:44:32.710: [INFO] LastUsedProfileDir: D:\Prathamesh\Project\ORVÉA\orvea-backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-10-12 16:44:32.710: [INFO] OnDoneLoading sync enabled: 0
+2026-10-12 16:44:32.710: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-12 16:44:32.710: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-12 16:44:32.710: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-12 16:44:43.211: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-12 16:47:32.731: [INFO] CurrentProfilePath: D:\Prathamesh\Project\ORVÉA\orvea-backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-10-12 16:47:32.731: [INFO] Profiles total count: 1
+2026-10-12 16:47:32.731: [INFO] Profile: name=Profile 1 path=D:\Prathamesh\Project\ORVÉA\orvea-backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=null
+2026-10-12 16:47:32.731: [INFO] LastUsedProfileDir: D:\Prathamesh\Project\ORVÉA\orvea-backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-10-12 16:47:32.731: [INFO] OnDoneLoading sync enabled: 0
+2026-10-12 16:47:32.731: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-12 16:47:32.731: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-12 16:47:32.731: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-12 16:47:35.789: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-12 16:49:46.813: [INFO] CurrentProfilePath: D:\Prathamesh\Project\ORVÉA\orvea-backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-10-12 16:49:46.813: [INFO] Profiles total count: 1
+2026-10-12 16:49:46.813: [INFO] Profile: name=Profile 1 path=D:\Prathamesh\Project\ORVÉA\orvea-backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=null
+2026-10-12 16:49:46.813: [INFO] LastUsedProfileDir: D:\Prathamesh\Project\ORVÉA\orvea-backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-10-12 16:49:46.813: [INFO] OnDoneLoading sync enabled: 0
+2026-10-12 16:49:46.813: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-12 16:49:46.813: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-12 16:49:46.813: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-12 16:49:50.166: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-12 16:50:53.269: [INFO] CurrentProfilePath: D:\Prathamesh\Project\ORVÉA\orvea-backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-10-12 16:50:53.269: [INFO] Profiles total count: 1
+2026-10-12 16:50:53.269: [INFO] Profile: name=Profile 1 path=D:\Prathamesh\Project\ORVÉA\orvea-backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=null
+2026-10-12 16:50:53.269: [INFO] LastUsedProfileDir: D:\Prathamesh\Project\ORVÉA\orvea-backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-10-12 16:50:53.269: [INFO] OnDoneLoading sync enabled: 0
+2026-10-12 16:50:53.269: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-12 16:50:53.269: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-12 16:50:53.269: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-12 16:51:28.161: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-12 16:51:34.315: [INFO] CurrentProfilePath: D:\Prathamesh\Project\ORVÉA\orvea-backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-10-12 16:51:34.315: [INFO] Profiles total count: 1
+2026-10-12 16:51:34.315: [INFO] Profile: name=Profile 1 path=D:\Prathamesh\Project\ORVÉA\orvea-backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=null
+2026-10-12 16:51:34.315: [INFO] LastUsedProfileDir: D:\Prathamesh\Project\ORVÉA\orvea-backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-10-12 16:51:34.315: [INFO] OnDoneLoading sync enabled: 0
+2026-10-12 16:51:34.315: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-12 16:51:34.315: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-12 16:51:34.315: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-12 17:37:23.111: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1

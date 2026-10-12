@@ -1,0 +1,5 @@
+package com.hms.auth.config;
+
+public class RolePermissionMatrix {
+
+}

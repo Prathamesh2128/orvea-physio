@@ -29,7 +29,7 @@ import lombok.Setter;
 @Table(name = "user_sessions", indexes = @Index(name = "idx_session_user_status", columnList = "user_id, status"))
 @SQLRestriction("is_deleted = false")
 public class UserSession extends BaseEntity {
-	
+
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	@JoinColumn(name = "user_id", nullable = false)
 	private User user;
@@ -48,12 +48,15 @@ public class UserSession extends BaseEntity {
 	@Column(nullable = false)
 	private LocalDateTime expiresAt;
 
+	@Column(name = "revoked_at")
+	private LocalDateTime revokedAt;
+
 	@Column(length = 250)
 	private String revokeReason;
 
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false, length = 20)
-	private SessionStatus status;
+	private SessionStatus status = SessionStatus.ACTIVE;
 
 	@OneToMany(mappedBy = "session", fetch = FetchType.LAZY)
 	private List<RefreshToken> refreshToken = new ArrayList<>();

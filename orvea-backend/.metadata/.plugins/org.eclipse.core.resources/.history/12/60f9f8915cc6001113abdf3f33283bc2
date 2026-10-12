@@ -1,0 +1,43 @@
+package com.hms.auth.controller;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.hms.auth.dto.LoginRequest;
+import com.hms.auth.dto.RefreshRequest;
+import com.hms.auth.dto.TokenResponse;
+import com.hms.auth.service.AuthService;
+import com.hms.common.api.ApiResponse;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+
+@RestController
+@RequestMapping("/api/v1/auth")
+@RequiredArgsConstructor
+public class AuthController {
+
+	private final AuthService authService;
+
+	@PostMapping("/login")
+	public ApiResponse<TokenResponse> login(@Valid @RequestBody LoginRequest req, HttpServletRequest httpReq) {
+		TokenResponse data = authService.login(req, clientIp(httpReq), httpReq.getHeader("User-Agent"));
+
+		return ApiResponse.ok("Login successfull", data);
+	}
+
+	@PostMapping("/refresh")
+	public ApiResponse<TokenResponse> refresh(@Valid @RequestBody RefreshRequest req) {
+		data = authService.refresh(req.refreshToken);
+		return ApiResponse.ok(data);
+	}
+
+	// Helper Methods
+	private String clientIp(HttpServletRequest req) {
+		String xff = req.getHeader("X-Forwarded-For");
+		return xff != null && !xff.isBlank() ? xff.split(",")[0].trim() : req.getRemoteAddr();
+	}
+}

@@ -1,0 +1,27 @@
+package com.hms.auth.service;
+
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.stereotype.Service;
+
+import com.hms.common.security.JwtProperties;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@Service
+@RequiredArgsConstructor
+public class SessionBlaklistService {
+	private final StringRedisTemplate redis;
+	private final JwtProperties jwtProperties;
+
+	public void revoke(String sessionId) {
+		try {
+
+		} catch (Exception e) {
+			// DB state is already revoked (refresh is blocked);
+			// access token lives at most 15 min
+			log.error("Could not write session {} to Redis blacklist", sessionId, e);
+		}
+	}
+}

@@ -24,6 +24,8 @@ import com.hms.common.security.AuthenticatedUser;
 import com.hms.common.security.JwtProperties;
 import com.hms.common.security.JwtTokenUtil;
 
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.JwtException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -32,16 +34,18 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class AuthService {
 
-	private final RefreshTokenRepository refreshTokenRepository;
-
 	static final int MAX_FAILED_ATTEMPTS = 5;
 	static final int LOCK_MINUTES = 15;
 
 	private final PasswordEncoder passwordEncoder;
 	private final JwtProperties jwtProperties;
 	private final JwtTokenUtil jwtTokenUtil;
+	
 	private final UserRepository userRepository;
 	private final UserSessionRepository sessionRepository;
+	private final RefreshTokenRepository refreshTokenRepository;
+	
+	private final SessionBlaklistService sessionBlaklistService;
 
 	// noRollbackFor: failed-attempt counters must be committed even when we throw
 	@Transactional(noRollbackFor = BusinessException.class)
@@ -79,6 +83,47 @@ public class AuthService {
 		return issueTokens(user, session);
 	}
 
+	@Transactional(noRollbackFor = BusinessException.class)
+	public TokenResponse refresh(String refreshToken) {
+		Claims claims;
+		try {
+			claims = jwtTokenUtil.parse(refreshToken);
+		} catch (JwtException | IllegalArgumentException e) {
+			throw new UnauthorizedException("Invalid refresh token");
+		}
+		if (!"refresh".equals(claims.get("typ", String.class))) {
+			throw new UnauthorizedException("Invalid token type");
+		}
+
+		RefreshToken stored = refreshTokenRepository.findByTokenHash(HashUtil.sha256(refreshToken))
+				.orElseThrow(() -> new UnauthorizedException("Refresh token not recognised"));
+
+		UserSession session = stored.getSession();
+		LocalDateTime now = LocalDateTime.now();
+
+		if (stored.isRevoked()) {
+			// A rotated token was presented again => likely stolen. Kill the whole session.
+			terminateSession(session, "Refresh token reuse detected");
+			throw new UnauthorizedException("Refresh token reuse detected; session terminated");
+		}
+
+		if (session.getStatus() != SessionStatus.ACTIVE || stored.getExpiresAt().isBefore(now)) {
+			throw new UnauthorizedException("Session expired");
+		}
+		User user = stored.getUser();
+		if (!user.isEnabled()) {
+			throw new ForbiddenException("Account is disabled");
+		}
+
+		stored.setRevoked(true);
+		stored.setRevokedAt(now);
+		session.setLastAccessAt(now);
+
+		TokenResponse response = issueTokens(user, session);
+		stored.setReplacedByHash(HashUtil.sha256(response.refreshToken()));
+		return response;
+	}
+
 	// Helper Methods
 	private void registerFailure(User user, LocalDateTime now) {
 		int attempts = user.getFailedLoginAttempts() + 1;
@@ -110,5 +155,13 @@ public class AuthService {
 
 		return new TokenResponse(access, refresh, "Bearer", jwtProperties.getAccessTokenExpiryMs() / 1000, sid,
 				UserMapper.toSummary(user));
+	}
+
+	private void terminateSession(UserSession session, String reason) {
+		session.setStatus(SessionStatus.REVOKED);
+		session.setRevokedAt(LocalDateTime.now());
+		session.setRevokeReason(reason);
+		refreshTokenRepository.revokeAllBySession(session.getId(), LocalDateTime.now());
+		sessionBlaklistService.revoke(session.getId().toString());
 	}
 }
