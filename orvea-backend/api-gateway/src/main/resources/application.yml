@@ -57,7 +57,7 @@ physio:
   jwt:
     # Base64 256-bit+ key. Same value in the gateway and auth-service. Override in prod via env var.
     secret: ${JWT_SECRET:cGh5c2lvLWhtcy1zdXBlci1zZWNyZXQta2V5LWNoYW5nZS1pbi1wcm9kdWN0aW9uLTI1Ng==}
-    issuer: hms-physio
+    issuer: physio-hms
 
 management:
   endpoints:
