@@ -1,0 +1,11 @@
+Eclipse workspace metadata
+.metadata/
+
+Java build output
+/target/
+
+IDE files
+.idea/ *.iml
+
+Logs
+*.log

@@ -3137,3 +3137,1911 @@ java.lang.Exception: Resolve classpath: unable to resolve a project from : file:
 
 !ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:07:22.817
 !MESSAGE 23:07:22.816 [pool-13-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Invalidate AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/controller/UserController.java
+!SESSION 2026-10-12 23:08:13.966 -----------------------------------------------
+eclipse.buildId=4.36.0.202506052058
+java.version=21.0.7
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY ch.qos.logback.classic 1 0 2026-10-12 23:08:18.017
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2026-10-12 23:08:48.580
+!MESSAGE Logback config file: D:\Prathamesh\Project\ORVÉA\orvea-backend\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.7.100.20250418-1315.xml
+
+!ENTRY org.eclipse.ui 2 0 2026-10-12 23:08:49.071
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2026-10-12 23:08:49.071
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.ui 2 0 2026-10-12 23:08:49.435
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2026-10-12 23:08:49.436
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.egit.ui 2 0 2026-10-12 23:08:59.870
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Prathamesh Shinde'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.ui.workbench 4 0 2026-10-12 23:08:59.876
+!MESSAGE Failed to obtain 'WinDefend' service state
+!STACK 0
+java.io.IOException: Cannot run program "powershell.exe": CreateProcess error=2, The system cannot find the file specified
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
+	at org.eclipse.ui.internal.WindowsDefenderConfigurator.runProcess(WindowsDefenderConfigurator.java:384)
+	at org.eclipse.ui.internal.WindowsDefenderConfigurator.runPowershell(WindowsDefenderConfigurator.java:379)
+	at org.eclipse.ui.internal.WindowsDefenderConfigurator.isWindowsDefenderServiceRunning(WindowsDefenderConfigurator.java:302)
+	at org.eclipse.ui.internal.WindowsDefenderConfigurator.runExclusionCheck(WindowsDefenderConfigurator.java:159)
+	at org.eclipse.ui.internal.WindowsDefenderConfigurator.lambda$0(WindowsDefenderConfigurator.java:106)
+	at org.eclipse.core.runtime.jobs.Job$2.run(Job.java:187)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.io.IOException: CreateProcess error=2, The system cannot find the file specified
+	at java.base/java.lang.ProcessImpl.create(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:506)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:159)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
+	... 8 more
+
+!ENTRY org.eclipse.lsp4e 2 0 2026-10-12 23:09:00.403
+!MESSAGE Timed out after waiting for 300ms for semantic tokens from Language Servers
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.computeSemanticTokens(LSJavaSemanticTokensProvider.java:68)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.getContributedSemanticTokens(SemanticHighlightingReconciler.java:423)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.reconciled(SemanticHighlightingReconciler.java:470)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1674)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:228)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconciled(JavaCompositeReconcilingStrategy.java:171)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.initialReconcile(JavaCompositeReconcilingStrategy.java:147)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.initialProcess(MonoReconciler.java:100)
+	at org.eclipse.jdt.internal.ui.text.JavaReconciler.initialProcess(JavaReconciler.java:425)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:177)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:06.052
+!MESSAGE 23:09:06.051 [pool-13-thread-1] INFO  o.s.i.v.c.l.u.SimpleTextDocumentService - change arrived: 1
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:06.088
+!MESSAGE 23:09:06.088 [pool-2-thread-3] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/config/RolePermissionMatrix.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:06.190
+!MESSAGE 23:09:06.189 [Simple-Language-Server main thread] INFO  o.s.i.v.b.jdt.ls.JdtLsProjectCache - INIT CLASSPATH LISTENER enableClasspath=true
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:06.192
+!MESSAGE 23:09:06.191 [Simple-Language-Server main thread] INFO  o.s.i.v.b.jdt.ls.JdtLsProjectCache - Adding classpath listener enabled=true
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:06.262
+!MESSAGE 23:09:06.259 [Simple-Language-Server main thread] INFO  o.s.i.v.c.l.u.SimpleLanguageServer - Initialization completed after 9560 ms
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:06.263
+!MESSAGE 23:09:06.262 [Simple-Language-Server main thread] INFO  o.s.i.v.boot.app.SpringSymbolIndex - update settings of spring indexer - done
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:06.263
+!MESSAGE 23:09:06.263 [Simple-Language-Server main thread] INFO  o.s.i.v.b.j.BootJavaLanguageServerComponents - update live process tracker settings - start
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:06.264
+!MESSAGE 23:09:06.263 [Simple-Language-Server main thread] INFO  o.s.i.v.b.j.BootJavaLanguageServerComponents - update live process tracker settings - done
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:06.264
+!MESSAGE 23:09:06.264 [Simple-Language-Server main thread] INFO  o.s.i.v.b.a.BootLanguageServerInitializer - Triggering reconcile on all open documents
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:06.269
+!MESSAGE 23:09:06.268 [Simple-Language-Server main thread] INFO  o.s.i.v.b.j.l.v.SpringProcessConnectorRemote - updating settings for remote processses to track - start
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:06.269
+!MESSAGE 23:09:06.268 [Simple-Language-Server main thread] INFO  o.s.i.v.b.j.l.v.SpringProcessConnectorRemote - updating settings for remote processses to track - done
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:06.270
+!MESSAGE 23:09:06.269 [Simple-Language-Server main thread] INFO  o.s.i.v.boot.app.SpringSymbolIndex - update settings of spring indexer - start
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:06.273
+!MESSAGE 23:09:06.273 [Simple-Language-Server main thread] INFO  o.s.i.v.b.j.BootJavaLanguageServerComponents - update live process tracker settings - done
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:06.273
+!MESSAGE 23:09:06.273 [Simple-Language-Server main thread] INFO  o.s.i.v.b.a.BootLanguageServerInitializer - Triggering reconcile on all open documents
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:06.274
+!MESSAGE 23:09:06.274 [Simple-Language-Server main thread] INFO  o.s.i.v.b.j.l.v.SpringProcessConnectorRemote - updating settings for remote processses to track - start
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:06.274
+!MESSAGE 23:09:06.274 [Simple-Language-Server main thread] INFO  o.s.i.v.b.j.l.v.SpringProcessConnectorRemote - updating settings for remote processses to track - done
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:06.404
+!MESSAGE 23:09:06.374 [Simple-Language-Server main thread] INFO  o.s.i.v.boot.app.SpringSymbolIndex - project created event: auth-service
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:06.409
+!MESSAGE 23:09:06.408 [Simple-Language-Server main thread] INFO  o.s.i.v.boot.app.SpringSymbolIndex - project created event: common-lib
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:06.414
+!MESSAGE 23:09:06.413 [Simple-Language-Server main thread] INFO  o.s.i.v.boot.app.SpringSymbolIndex - project created event: eureka-server
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:06.424
+!MESSAGE 23:09:06.424 [pool-4-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Started parsing CU for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/config/RolePermissionMatrix.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:06.448
+!MESSAGE 23:09:06.445 [pool-5-thread-1] INFO  o.s.i.v.b.j.u.SpringFactoriesIndexer - scan factories files used cached data: auth-service - no. of cached symbols retrieved: 0
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:06.547
+!MESSAGE 23:09:06.509 [pool-5-thread-1] INFO  o.s.i.v.b.i.c.IndexCacheOnDiscDeltaBased - compacting...
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:06.583
+!MESSAGE 23:09:06.583 [pool-5-thread-1] INFO  o.s.i.v.b.j.utils.SpringIndexerJava - scan java files used cached data: auth-service - no. of cached symbols retrieved: 36
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:06.596
+!MESSAGE 23:09:06.594 [pool-5-thread-1] INFO  o.s.i.v.b.j.utils.SpringIndexerJava - reconciling stats - timer: 0
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:06.664
+!MESSAGE 23:09:06.610 [pool-5-thread-1] INFO  o.s.i.v.b.j.utils.SpringIndexerJava - scan java files for symbols for project: api-gateway - no. of files: 3
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:06.666
+!MESSAGE 23:09:06.664 [pool-5-thread-1] INFO  o.s.i.v.b.j.utils.SpringIndexerJava - scan java files for symbols for project: api-gateway took ms: 54
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:06.683
+!MESSAGE 23:09:06.683 [pool-5-thread-1] INFO  o.s.i.v.b.j.u.SpringFactoriesIndexer - scan factories files used cached data: common-lib - no. of cached symbols retrieved: 0
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:06.745
+!MESSAGE 23:09:06.745 [pool-5-thread-1] INFO  o.s.i.v.b.j.utils.SpringIndexerJava - scan java files used cached data: common-lib - no. of cached symbols retrieved: 19
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:06.756
+!MESSAGE 23:09:06.756 [pool-5-thread-1] INFO  o.s.i.v.b.j.utils.SpringIndexerJava - reconciling stats - timer: 0
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:06.764
+!MESSAGE 23:09:06.764 [pool-5-thread-1] INFO  o.s.i.v.b.j.u.SpringFactoriesIndexer - scan factories files used cached data: eureka-server - no. of cached symbols retrieved: 0
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:06.764
+!MESSAGE 23:09:06.764 [pool-5-thread-1] INFO  o.s.i.v.b.j.u.SpringFactoriesIndexer - scan factories files for symbols for project: eureka-server took ms: 7
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:06.765
+!MESSAGE 23:09:06.765 [pool-5-thread-1] INFO  o.s.i.v.b.j.utils.SpringIndexerJava - scan java files for symbols for project: eureka-server - no. of files: 2
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:06.853
+!MESSAGE 23:09:06.852 [pool-5-thread-1] INFO  o.s.i.v.b.j.utils.SpringIndexerJava - scan java files used cached data: eureka-server - no. of cached symbols retrieved: 4
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:06.929
+!MESSAGE 23:09:06.929 [Project-Reconciler-1] INFO  o.s.i.v.boot.app.RestTemplateFactory - Environment size: 51
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:06.931
+!MESSAGE 23:09:06.929 [Project-Reconciler-1] INFO  o.s.i.v.boot.app.RestTemplateFactory - Env var https_proxy: null
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:06.931
+!MESSAGE 23:09:06.929 [Project-Reconciler-1] INFO  o.s.i.v.boot.app.RestTemplateFactory - Proxy URL from env: null
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:07.071
+!MESSAGE 23:09:07.066 [pool-2-thread-6] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/config/RolePermissionMatrix.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:07.072
+!MESSAGE 23:09:07.072 [pool-2-thread-4] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/config/RolePermissionMatrix.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:07.507
+!MESSAGE 23:09:07.507 [pool-2-thread-5] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/config/RolePermissionMatrix.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:07.508
+!MESSAGE 23:09:07.507 [pool-2-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/config/RolePermissionMatrix.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:07.510
+!MESSAGE 23:09:07.509 [pool-2-thread-3] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/config/RolePermissionMatrix.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:07.517
+!MESSAGE 23:09:07.517 [pool-2-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/config/RolePermissionMatrix.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.272
+!MESSAGE 23:09:08.487 [Project-Reconciler-1] INFO  o.s.i.v.boot.app.RestTemplateFactory - Env var https_proxy: null
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.273
+!MESSAGE 23:09:09.271 [Project-Reconciler-1] INFO  o.s.i.v.boot.app.RestTemplateFactory - Environment size: 51
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.657
+!MESSAGE sClient.getGenerations(SpringProjectsClient.java:48)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.658
+!MESSAGE 	at org.springframework.ide.vscode.boot.validation.generations.json.ResolvedSpringProject.getGenerations(ResolvedSpringProject.java:43)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.658
+!MESSAGE 	at org.springframework.ide.vscode.boot.validation.generations.GenerationsValidator.getGenerationForJavaProject(GenerationsValidator.java:46)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.658
+!MESSAGE 	at org.springframework.ide.vscode.boot.validation.generations.GenerationsValidator.validate(GenerationsValidator.java:63)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.659
+!MESSAGE 	at org.springframework.ide.vscode.boot.validation.generations.ProjectVersionDiagnosticProvider.getDiagnostics(ProjectVersionDiagnosticProvider.java:60)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.659
+!MESSAGE 	at org.springframework.ide.vscode.boot.validation.BootVersionValidationEngine.reconcile(BootVersionValidationEngine.java:50)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.659
+!MESSAGE 	at org.springframework.ide.vscode.boot.common.ProjectReconcileScheduler.lambda$scheduleValidation$0(ProjectReconcileScheduler.java:85)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.660
+!MESSAGE 	at java.base/java.util.Optional.ifPresent(Optional.java:178)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.660
+!MESSAGE 	at org.springframework.ide.vscode.boot.common.ProjectReconcileScheduler.lambda$scheduleValidation$1(ProjectReconcileScheduler.java:83)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.660
+!MESSAGE 	at reactor.core.publisher.MonoPeekTerminal$MonoTerminalPeekSubscriber.onNext(MonoPeekTerminal.java:171)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.661
+!MESSAGE 	at reactor.core.publisher.FluxOnAssembly$OnAssemblySubscriber.onNext(FluxOnAssembly.java:539)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.661
+!MESSAGE 	at reactor.core.publisher.MonoPublishOn$PublishOnSubscriber.run(MonoPublishOn.java:181)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.661
+!MESSAGE 	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.661
+!MESSAGE 	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.662
+!MESSAGE 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.662
+!MESSAGE 	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.662
+!MESSAGE 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.663
+!MESSAGE 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.663
+!MESSAGE 	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.663
+!MESSAGE Caused by: com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field "support" (class org.springframework.ide.vscode.boot.validation.generations.json.Generation), not marked as ignorable (5 known properties: "ossSupportEndDate", "_links", "name", "commercialSupportEndDate", "initialReleaseDate"])
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.663
+!MESSAGE  at [Source: UNKNOWN; byte offset: #UNKNOWN] (through reference chain: org.springframework.ide.vscode.boot.validation.generations.json.Generations["generations"]->java.util.ArrayList[0]->org.springframework.ide.vscode.boot.validation.generations.json.Generation["support"])
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.664
+!MESSAGE 	at com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException.from(UnrecognizedPropertyException.java:61)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.665
+!MESSAGE 	at com.fasterxml.jackson.databind.DeserializationContext.handleUnknownProperty(DeserializationContext.java:1153)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.665
+!MESSAGE 	at com.fasterxml.jackson.databind.deser.std.StdDeserializer.handleUnknownProperty(StdDeserializer.java:2241)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.666
+!MESSAGE 	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownProperty(BeanDeserializerBase.java:1821)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.667
+!MESSAGE 	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownVanilla(BeanDeserializerBase.java:1799)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.667
+!MESSAGE 	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:316)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.668
+!MESSAGE 	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:177)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.668
+!MESSAGE 	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer._deserializeFromArray(CollectionDeserializer.java:361)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.668
+!MESSAGE 	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:246)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.668
+!MESSAGE 	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:30)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.669
+!MESSAGE 	at com.fasterxml.jackson.databind.deser.impl.FieldProperty.deserializeAndSet(FieldProperty.java:138)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.669
+!MESSAGE 	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:310)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.669
+!MESSAGE 	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:177)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.670
+!MESSAGE 	at com.fasterxml.jackson.databind.ObjectMapper._convert(ObjectMapper.java:4631)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:09.670
+!MESSAGE 	... 21 common frames omitted
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.060
+!MESSAGE sClient.getGenerations(SpringProjectsClient.java:48)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.060
+!MESSAGE 	at org.springframework.ide.vscode.boot.validation.generations.json.ResolvedSpringProject.getGenerations(ResolvedSpringProject.java:43)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.060
+!MESSAGE 	at org.springframework.ide.vscode.boot.validation.generations.GenerationsValidator.getGenerationForJavaProject(GenerationsValidator.java:46)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.061
+!MESSAGE 	at org.springframework.ide.vscode.boot.validation.generations.GenerationsValidator.validate(GenerationsValidator.java:63)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.061
+!MESSAGE 	at org.springframework.ide.vscode.boot.validation.generations.ProjectVersionDiagnosticProvider.getDiagnostics(ProjectVersionDiagnosticProvider.java:60)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.061
+!MESSAGE 	at org.springframework.ide.vscode.boot.validation.BootVersionValidationEngine.reconcile(BootVersionValidationEngine.java:50)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.061
+!MESSAGE 	at org.springframework.ide.vscode.boot.common.ProjectReconcileScheduler.lambda$scheduleValidation$0(ProjectReconcileScheduler.java:85)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.062
+!MESSAGE 	at java.base/java.util.Optional.ifPresent(Optional.java:178)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.062
+!MESSAGE 	at org.springframework.ide.vscode.boot.common.ProjectReconcileScheduler.lambda$scheduleValidation$1(ProjectReconcileScheduler.java:83)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.062
+!MESSAGE 	at reactor.core.publisher.MonoPeekTerminal$MonoTerminalPeekSubscriber.onNext(MonoPeekTerminal.java:171)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.062
+!MESSAGE 	at reactor.core.publisher.FluxOnAssembly$OnAssemblySubscriber.onNext(FluxOnAssembly.java:539)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.063
+!MESSAGE 	at reactor.core.publisher.MonoPublishOn$PublishOnSubscriber.run(MonoPublishOn.java:181)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.063
+!MESSAGE 	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.063
+!MESSAGE 	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.063
+!MESSAGE 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.064
+!MESSAGE 	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.064
+!MESSAGE 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.064
+!MESSAGE 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.064
+!MESSAGE 	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.064
+!MESSAGE Caused by: com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field "support" (class org.springframework.ide.vscode.boot.validation.generations.json.Generation), not marked as ignorable (5 known properties: "ossSupportEndDate", "_links", "name", "commercialSupportEndDate", "initialReleaseDate"])
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.065
+!MESSAGE  at [Source: UNKNOWN; byte offset: #UNKNOWN] (through reference chain: org.springframework.ide.vscode.boot.validation.generations.json.Generations["generations"]->java.util.ArrayList[0]->org.springframework.ide.vscode.boot.validation.generations.json.Generation["support"])
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.065
+!MESSAGE 	at com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException.from(UnrecognizedPropertyException.java:61)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.065
+!MESSAGE 	at com.fasterxml.jackson.databind.DeserializationContext.handleUnknownProperty(DeserializationContext.java:1153)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.065
+!MESSAGE 	at com.fasterxml.jackson.databind.deser.std.StdDeserializer.handleUnknownProperty(StdDeserializer.java:2241)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.066
+!MESSAGE 	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownProperty(BeanDeserializerBase.java:1821)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.066
+!MESSAGE 	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownVanilla(BeanDeserializerBase.java:1799)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.066
+!MESSAGE 	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:316)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.066
+!MESSAGE 	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:177)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.067
+!MESSAGE 	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer._deserializeFromArray(CollectionDeserializer.java:361)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.067
+!MESSAGE 	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:246)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.067
+!MESSAGE 	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:30)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.068
+!MESSAGE 	at com.fasterxml.jackson.databind.deser.impl.FieldProperty.deserializeAndSet(FieldProperty.java:138)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.068
+!MESSAGE 	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:310)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.068
+!MESSAGE 	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:177)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.068
+!MESSAGE 	at com.fasterxml.jackson.databind.ObjectMapper._convert(ObjectMapper.java:4631)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.069
+!MESSAGE 	... 21 common frames omitted
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.433
+!MESSAGE sClient.getGenerations(SpringProjectsClient.java:48)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.433
+!MESSAGE 	at org.springframework.ide.vscode.boot.validation.generations.json.ResolvedSpringProject.getGenerations(ResolvedSpringProject.java:43)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.433
+!MESSAGE 	at org.springframework.ide.vscode.boot.validation.generations.GenerationsValidator.getGenerationForJavaProject(GenerationsValidator.java:46)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.434
+!MESSAGE 	at org.springframework.ide.vscode.boot.validation.generations.GenerationsValidator.validate(GenerationsValidator.java:63)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.434
+!MESSAGE 	at org.springframework.ide.vscode.boot.validation.generations.ProjectVersionDiagnosticProvider.getDiagnostics(ProjectVersionDiagnosticProvider.java:60)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.434
+!MESSAGE 	at org.springframework.ide.vscode.boot.validation.BootVersionValidationEngine.reconcile(BootVersionValidationEngine.java:50)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.435
+!MESSAGE 	at org.springframework.ide.vscode.boot.common.ProjectReconcileScheduler.lambda$scheduleValidation$0(ProjectReconcileScheduler.java:85)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.435
+!MESSAGE 	at java.base/java.util.Optional.ifPresent(Optional.java:178)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.435
+!MESSAGE 	at org.springframework.ide.vscode.boot.common.ProjectReconcileScheduler.lambda$scheduleValidation$1(ProjectReconcileScheduler.java:83)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.435
+!MESSAGE 	at reactor.core.publisher.MonoPeekTerminal$MonoTerminalPeekSubscriber.onNext(MonoPeekTerminal.java:171)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.436
+!MESSAGE 	at reactor.core.publisher.FluxOnAssembly$OnAssemblySubscriber.onNext(FluxOnAssembly.java:539)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.436
+!MESSAGE 	at reactor.core.publisher.MonoPublishOn$PublishOnSubscriber.run(MonoPublishOn.java:181)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.436
+!MESSAGE 	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.436
+!MESSAGE 	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.436
+!MESSAGE 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.436
+!MESSAGE 	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.437
+!MESSAGE 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.437
+!MESSAGE 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.437
+!MESSAGE 	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.437
+!MESSAGE Caused by: com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field "support" (class org.springframework.ide.vscode.boot.validation.generations.json.Generation), not marked as ignorable (5 known properties: "ossSupportEndDate", "_links", "name", "commercialSupportEndDate", "initialReleaseDate"])
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.438
+!MESSAGE  at [Source: UNKNOWN; byte offset: #UNKNOWN] (through reference chain: org.springframework.ide.vscode.boot.validation.generations.json.Generations["generations"]->java.util.ArrayList[0]->org.springframework.ide.vscode.boot.validation.generations.json.Generation["support"])
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.438
+!MESSAGE 	at com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException.from(UnrecognizedPropertyException.java:61)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.438
+!MESSAGE 	at com.fasterxml.jackson.databind.DeserializationContext.handleUnknownProperty(DeserializationContext.java:1153)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.438
+!MESSAGE 	at com.fasterxml.jackson.databind.deser.std.StdDeserializer.handleUnknownProperty(StdDeserializer.java:2241)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.438
+!MESSAGE 	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownProperty(BeanDeserializerBase.java:1821)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.439
+!MESSAGE 	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownVanilla(BeanDeserializerBase.java:1799)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.439
+!MESSAGE 	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:316)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.439
+!MESSAGE 	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:177)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.439
+!MESSAGE 	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer._deserializeFromArray(CollectionDeserializer.java:361)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.439
+!MESSAGE 	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:246)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.439
+!MESSAGE 	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:30)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.440
+!MESSAGE 	at com.fasterxml.jackson.databind.deser.impl.FieldProperty.deserializeAndSet(FieldProperty.java:138)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.440
+!MESSAGE 	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:310)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.440
+!MESSAGE 	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:177)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.441
+!MESSAGE 	at com.fasterxml.jackson.databind.ObjectMapper._convert(ObjectMapper.java:4631)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:10.441
+!MESSAGE 	... 21 common frames omitted
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:16.119
+!MESSAGE 23:09:15.925 [pool-6-thread-2] INFO  o.s.i.v.b.j.l.v.SpringProcessConnectorOverJMX - try to open JMX connection to: service:jmx:rmi:///jndi/rmi://127.0.0.1:56189/jmxrmi
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:19.740
+!MESSAGE 23:09:19.739 [pool-2-thread-4] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/config/RolePermissionMatrix.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:09:24.182
+!MESSAGE 23:09:24.027 [pool-6-thread-1] INFO  o.s.i.v.b.j.l.v.SpringProcessConnectorService - refresh process: service:jmx:rmi:///jndi/rmi://127.0.0.1:56202/jmxrmi
+
+!ENTRY org.eclipse.jface 2 0 2026-10-12 23:09:50.569
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2026-10-12 23:09:50.569
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolInWorkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolInWorkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:10:25.950
+!MESSAGE 23:10:15.881 [pool-12-thread-1] INFO  o.s.i.v.c.l.u.ParentProcessWatcher - The tasklist command: 'cmd /c "tasklist /FI "PID eq 26608" | findstr 26608"' returns 255
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:10:28.426
+!MESSAGE 23:10:28.426 [pool-13-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Invalidate AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:10:28.428
+!MESSAGE 23:10:28.428 [pool-4-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Started parsing CU for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:10:28.492
+!MESSAGE 23:10:28.435 [pool-2-thread-10] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:10:28.495
+!MESSAGE 23:10:28.494 [pool-2-thread-9] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:10:28.929
+!MESSAGE 23:10:28.646 [pool-2-thread-10] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:10:28.957
+!MESSAGE 23:10:28.956 [Reconciler-1] INFO  o.s.i.v.b.j.r.JdtReconciler - reconciling (JDT): file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java done in 28ms
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:10:28.958
+!MESSAGE 23:10:28.958 [ForkJoinPool.commonPool-worker-3] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:10:28.968
+!MESSAGE Failed to fetch semantic tokens for 'D:/Prathamesh/Project/ORVÉA/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java' from Language Servers
+!STACK 0
+java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.computeSemanticTokens(LSJavaSemanticTokensProvider.java:68)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.getContributedSemanticTokens(SemanticHighlightingReconciler.java:423)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.reconciled(SemanticHighlightingReconciler.java:470)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1674)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:228)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconciled(JavaCompositeReconcilingStrategy.java:171)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.initialReconcile(JavaCompositeReconcilingStrategy.java:147)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.initialProcess(MonoReconciler.java:100)
+	at org.eclipse.jdt.internal.ui.text.JavaReconciler.initialProcess(JavaReconciler.java:425)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:177)
+Caused by: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1027)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.defineClass(ModuleClassLoader.java:315)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.defineClass(ClasspathManager.java:778)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findClassImpl(ClasspathManager.java:695)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClassImpl(ClasspathManager.java:659)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClassImpl(ClasspathManager.java:639)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:618)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:353)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:417)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass0(BundleLoader.java:525)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:438)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:195)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.convertTokens(LSJavaSemanticTokensProvider.java:89)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.lambda$0(LSJavaSemanticTokensProvider.java:67)
+	at org.eclipse.lsp4e.operations.semanticTokens.SemanticTokensClient.lambda$2(SemanticTokensClient.java:49)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:646)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2179)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:223)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:449)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.lsp4e.operations.semanticTokens.AbstractcSemanticTokensDataStreamProcessor cannot be found by org.eclipse.lsp4e.jdt_0.13.7.202505091900
+	at org.eclipse.osgi.internal.loader.BundleLoader.generateException(BundleLoader.java:567)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass0(BundleLoader.java:562)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:438)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:195)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	... 31 more
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:10:28.974
+!MESSAGE 23:10:28.973 [pool-2-thread-10] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:10:28.974
+!MESSAGE 23:10:28.973 [pool-2-thread-10] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:10:28.977
+!MESSAGE 23:10:28.976 [pool-2-thread-8] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:10:30.071
+!MESSAGE 23:10:30.071 [pool-2-thread-8] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:10:30.072
+!MESSAGE 23:10:30.071 [pool-2-thread-8] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:06.431
+!MESSAGE 23:11:06.430 [pool-2-thread-8] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:08.321
+!MESSAGE 23:11:08.321 [pool-7-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/entity/RefreshToken.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:08.324
+!MESSAGE 23:11:08.323 [pool-2-thread-7] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/entity/RefreshToken.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:08.354
+!MESSAGE 23:11:08.353 [pool-4-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/entity/RefreshToken.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:08.354
+!MESSAGE 23:11:08.353 [pool-2-thread-9] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/entity/RefreshToken.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:08.794
+!MESSAGE 23:11:08.792 [ForkJoinPool.commonPool-worker-3] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/entity/RefreshToken.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:08.799
+!MESSAGE 23:11:08.799 [pool-2-thread-10] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/entity/RefreshToken.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:08.799
+!MESSAGE 23:11:08.799 [pool-2-thread-10] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/entity/RefreshToken.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:08.804
+!MESSAGE 23:11:08.804 [pool-2-thread-10] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/entity/RefreshToken.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:08.805
+!MESSAGE 23:11:08.804 [pool-2-thread-10] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/entity/RefreshToken.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:24.510
+!MESSAGE 23:11:08.821 [Reconciler-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/entity/RefreshToken.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:24.511
+!MESSAGE 23:11:24.509 [pool-13-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Invalidate AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:24.528
+!MESSAGE 23:11:24.526 [pool-4-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:24.828
+!MESSAGE 23:11:24.725 [pool-4-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:24.905
+!MESSAGE 23:11:24.840 [pool-4-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:24.908
+!MESSAGE Failed to fetch semantic tokens for 'D:/Prathamesh/Project/ORVÉA/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java' from Language Servers
+!STACK 0
+java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.computeSemanticTokens(LSJavaSemanticTokensProvider.java:68)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.getContributedSemanticTokens(SemanticHighlightingReconciler.java:423)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.reconciled(SemanticHighlightingReconciler.java:470)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1674)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:228)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconciled(JavaCompositeReconcilingStrategy.java:171)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:115)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:78)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+Caused by: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.convertTokens(LSJavaSemanticTokensProvider.java:89)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.lambda$0(LSJavaSemanticTokensProvider.java:67)
+	at org.eclipse.lsp4e.operations.semanticTokens.SemanticTokensClient.lambda$2(SemanticTokensClient.java:49)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:646)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2179)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:223)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:449)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.lsp4e.operations.semanticTokens.AbstractcSemanticTokensDataStreamProcessor cannot be found by org.eclipse.lsp4e.jdt_0.13.7.202505091900
+	... 17 more
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:24.912
+!MESSAGE 23:11:24.911 [pool-2-thread-10] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:24.914
+!MESSAGE 23:11:24.914 [pool-2-thread-7] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:24.980
+!MESSAGE 23:11:24.965 [pool-13-thread-1] INFO  o.s.i.v.c.l.u.SimpleTextDocumentService - change message work done in 1ms
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:24.981
+!MESSAGE 23:11:24.980 [pool-7-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:25.314
+!MESSAGE 23:11:25.095 [pool-4-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Started parsing CU for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:25.315
+!MESSAGE 23:11:25.109 [pool-4-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:25.315
+!MESSAGE 23:11:25.314 [ForkJoinPool.commonPool-worker-3] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:25.318
+!MESSAGE Failed to fetch semantic tokens for 'D:/Prathamesh/Project/ORVÉA/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java' from Language Servers
+!STACK 0
+java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.computeSemanticTokens(LSJavaSemanticTokensProvider.java:68)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.getContributedSemanticTokens(SemanticHighlightingReconciler.java:423)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.reconciled(SemanticHighlightingReconciler.java:470)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1674)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:228)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconciled(JavaCompositeReconcilingStrategy.java:171)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:115)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:78)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+Caused by: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.convertTokens(LSJavaSemanticTokensProvider.java:89)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.lambda$0(LSJavaSemanticTokensProvider.java:67)
+	at org.eclipse.lsp4e.operations.semanticTokens.SemanticTokensClient.lambda$2(SemanticTokensClient.java:49)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:646)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2179)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:223)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:449)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.lsp4e.operations.semanticTokens.AbstractcSemanticTokensDataStreamProcessor cannot be found by org.eclipse.lsp4e.jdt_0.13.7.202505091900
+	... 17 more
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:25.323
+!MESSAGE 23:11:25.323 [pool-2-thread-10] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:25.327
+!MESSAGE 23:11:25.327 [pool-2-thread-7] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:25.846
+!MESSAGE 23:11:25.834 [pool-4-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Started parsing CU for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/config/RolePermissionMatrix.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:25.847
+!MESSAGE 23:11:25.846 [pool-2-thread-10] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/config/RolePermissionMatrix.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:27.112
+!MESSAGE 23:11:25.849 [pool-2-thread-7] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/config/RolePermissionMatrix.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:29.816
+!MESSAGE 23:11:29.815 [ForkJoinPool.commonPool-worker-3] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/entity/RefreshToken.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:29.820
+!MESSAGE 23:11:29.819 [pool-2-thread-7] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/entity/RefreshToken.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:29.820
+!MESSAGE 23:11:29.820 [pool-2-thread-10] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/entity/RefreshToken.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:33.408
+!MESSAGE 23:11:33.406 [pool-2-thread-10] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/entity/RefreshToken.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:36.308
+!MESSAGE 23:11:36.053 [pool-2-thread-10] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:37.125
+!MESSAGE Failed to fetch semantic tokens for 'D:/Prathamesh/Project/ORVÉA/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java' from Language Servers
+!STACK 0
+java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.computeSemanticTokens(LSJavaSemanticTokensProvider.java:68)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.getContributedSemanticTokens(SemanticHighlightingReconciler.java:423)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.reconciled(SemanticHighlightingReconciler.java:470)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1674)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:228)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconciled(JavaCompositeReconcilingStrategy.java:171)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:115)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:78)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+Caused by: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.convertTokens(LSJavaSemanticTokensProvider.java:89)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.lambda$0(LSJavaSemanticTokensProvider.java:67)
+	at org.eclipse.lsp4e.operations.semanticTokens.SemanticTokensClient.lambda$2(SemanticTokensClient.java:49)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:646)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2179)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:223)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:449)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.lsp4e.operations.semanticTokens.AbstractcSemanticTokensDataStreamProcessor cannot be found by org.eclipse.lsp4e.jdt_0.13.7.202505091900
+	... 17 more
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:37.129
+!MESSAGE 23:11:36.345 [pool-2-thread-7] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:37.130
+!MESSAGE 23:11:37.129 [pool-2-thread-10] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:37.139
+!MESSAGE 23:11:37.131 [pool-2-thread-10] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:37.636
+!MESSAGE 23:11:37.635 [pool-2-thread-7] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/config/RolePermissionMatrix.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:40.479
+!MESSAGE 23:11:40.479 [pool-2-thread-7] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:40.480
+!MESSAGE 23:11:40.479 [pool-2-thread-7] INFO  o.s.i.v.c.l.u.SimpleTextDocumentService - hover computation done in 1ms
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:41.188
+!MESSAGE 23:11:40.744 [pool-13-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Invalidate AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:41.188
+!MESSAGE 23:11:40.744 [pool-13-thread-1] INFO  o.s.i.v.c.l.u.SimpleTextDocumentService - change message work done in 1ms
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:41.189
+!MESSAGE 23:11:41.188 [ForkJoinPool.commonPool-worker-3] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:41.192
+!MESSAGE Failed to fetch semantic tokens for 'D:/Prathamesh/Project/ORVÉA/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java' from Language Servers
+!STACK 0
+java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.computeSemanticTokens(LSJavaSemanticTokensProvider.java:68)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.getContributedSemanticTokens(SemanticHighlightingReconciler.java:423)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.reconciled(SemanticHighlightingReconciler.java:470)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1674)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:228)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconciled(JavaCompositeReconcilingStrategy.java:171)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:115)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:78)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+Caused by: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.convertTokens(LSJavaSemanticTokensProvider.java:89)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.lambda$0(LSJavaSemanticTokensProvider.java:67)
+	at org.eclipse.lsp4e.operations.semanticTokens.SemanticTokensClient.lambda$2(SemanticTokensClient.java:49)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:646)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2179)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:223)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:449)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.lsp4e.operations.semanticTokens.AbstractcSemanticTokensDataStreamProcessor cannot be found by org.eclipse.lsp4e.jdt_0.13.7.202505091900
+	... 17 more
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:41.196
+!MESSAGE 23:11:41.195 [pool-2-thread-7] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:41.199
+!MESSAGE 23:11:41.196 [pool-2-thread-10] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:41.299
+!MESSAGE 23:11:41.299 [pool-13-thread-1] INFO  o.s.i.v.c.l.u.SimpleTextDocumentService - change arrived: 11
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:41.313
+!MESSAGE 23:11:41.312 [pool-4-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:41.712
+!MESSAGE 23:11:41.709 [pool-2-thread-7] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/config/RolePermissionMatrix.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:41.719
+!MESSAGE 23:11:41.719 [ForkJoinPool.commonPool-worker-3] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:41.725
+!MESSAGE 23:11:41.724 [ForkJoinPool.commonPool-worker-3] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:41.726
+!MESSAGE Failed to fetch semantic tokens for 'D:/Prathamesh/Project/ORVÉA/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java' from Language Servers
+!STACK 0
+java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.computeSemanticTokens(LSJavaSemanticTokensProvider.java:68)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.getContributedSemanticTokens(SemanticHighlightingReconciler.java:423)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.reconciled(SemanticHighlightingReconciler.java:470)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1674)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:228)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconciled(JavaCompositeReconcilingStrategy.java:171)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:115)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:78)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+Caused by: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.convertTokens(LSJavaSemanticTokensProvider.java:89)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.lambda$0(LSJavaSemanticTokensProvider.java:67)
+	at org.eclipse.lsp4e.operations.semanticTokens.SemanticTokensClient.lambda$2(SemanticTokensClient.java:49)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:646)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2179)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:223)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:449)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.lsp4e.operations.semanticTokens.AbstractcSemanticTokensDataStreamProcessor cannot be found by org.eclipse.lsp4e.jdt_0.13.7.202505091900
+	... 17 more
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:41.732
+!MESSAGE 23:11:41.731 [pool-2-thread-10] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:41.811
+!MESSAGE 23:11:41.734 [pool-2-thread-7] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:42.356
+!MESSAGE 23:11:42.356 [pool-13-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Invalidate AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:42.678
+!MESSAGE 23:11:42.366 [pool-4-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:42.679
+!MESSAGE Failed to fetch semantic tokens for 'D:/Prathamesh/Project/ORVÉA/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java' from Language Servers
+!STACK 0
+java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.computeSemanticTokens(LSJavaSemanticTokensProvider.java:68)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.getContributedSemanticTokens(SemanticHighlightingReconciler.java:423)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.reconciled(SemanticHighlightingReconciler.java:470)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1674)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:228)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconciled(JavaCompositeReconcilingStrategy.java:171)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:115)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:78)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+Caused by: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.convertTokens(LSJavaSemanticTokensProvider.java:89)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.lambda$0(LSJavaSemanticTokensProvider.java:67)
+	at org.eclipse.lsp4e.operations.semanticTokens.SemanticTokensClient.lambda$2(SemanticTokensClient.java:49)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:646)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2179)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:223)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:449)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.lsp4e.operations.semanticTokens.AbstractcSemanticTokensDataStreamProcessor cannot be found by org.eclipse.lsp4e.jdt_0.13.7.202505091900
+	... 17 more
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:42.679
+!MESSAGE 23:11:42.677 [ForkJoinPool.commonPool-worker-3] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:42.686
+!MESSAGE 23:11:42.683 [pool-4-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Started parsing CU for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:42.696
+!MESSAGE 23:11:42.695 [pool-4-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Parsed successfully CU for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:42.698
+!MESSAGE 23:11:42.697 [pool-2-thread-7] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:42.862
+!MESSAGE 23:11:42.862 [pool-4-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Started parsing CU for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:42.876
+!MESSAGE 23:11:42.875 [pool-4-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:43.192
+!MESSAGE 23:11:43.191 [pool-2-thread-10] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/config/RolePermissionMatrix.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:43.195
+!MESSAGE Failed to fetch semantic tokens for 'D:/Prathamesh/Project/ORVÉA/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java' from Language Servers
+!STACK 0
+java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.computeSemanticTokens(LSJavaSemanticTokensProvider.java:68)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.getContributedSemanticTokens(SemanticHighlightingReconciler.java:423)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.reconciled(SemanticHighlightingReconciler.java:470)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1674)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:228)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconciled(JavaCompositeReconcilingStrategy.java:171)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:115)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:78)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+Caused by: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.convertTokens(LSJavaSemanticTokensProvider.java:89)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.lambda$0(LSJavaSemanticTokensProvider.java:67)
+	at org.eclipse.lsp4e.operations.semanticTokens.SemanticTokensClient.lambda$2(SemanticTokensClient.java:49)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:646)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2179)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:223)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:449)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.lsp4e.operations.semanticTokens.AbstractcSemanticTokensDataStreamProcessor cannot be found by org.eclipse.lsp4e.jdt_0.13.7.202505091900
+	... 17 more
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:43.200
+!MESSAGE 23:11:43.194 [ForkJoinPool.commonPool-worker-3] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:43.201
+!MESSAGE 23:11:43.199 [pool-2-thread-10] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:43.624
+!MESSAGE 23:11:43.431 [pool-4-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Parsed successfully CU for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:43.700
+!MESSAGE Failed to fetch semantic tokens for 'D:/Prathamesh/Project/ORVÉA/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java' from Language Servers
+!STACK 0
+java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.computeSemanticTokens(LSJavaSemanticTokensProvider.java:68)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.getContributedSemanticTokens(SemanticHighlightingReconciler.java:423)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.reconciled(SemanticHighlightingReconciler.java:470)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1674)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:228)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconciled(JavaCompositeReconcilingStrategy.java:171)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:115)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:78)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+Caused by: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.convertTokens(LSJavaSemanticTokensProvider.java:89)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.lambda$0(LSJavaSemanticTokensProvider.java:67)
+	at org.eclipse.lsp4e.operations.semanticTokens.SemanticTokensClient.lambda$2(SemanticTokensClient.java:49)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:646)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2179)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:223)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:449)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.lsp4e.operations.semanticTokens.AbstractcSemanticTokensDataStreamProcessor cannot be found by org.eclipse.lsp4e.jdt_0.13.7.202505091900
+	... 17 more
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:43.705
+!MESSAGE 23:11:43.703 [pool-2-thread-10] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:43.825
+!MESSAGE 23:11:43.824 [pool-13-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Invalidate AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:44.217
+!MESSAGE 23:11:44.216 [pool-2-thread-7] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/config/RolePermissionMatrix.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:44.220
+!MESSAGE 23:11:44.218 [ForkJoinPool.commonPool-worker-3] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:44.220
+!MESSAGE Failed to fetch semantic tokens for 'D:/Prathamesh/Project/ORVÉA/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java' from Language Servers
+!STACK 0
+java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.computeSemanticTokens(LSJavaSemanticTokensProvider.java:68)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.getContributedSemanticTokens(SemanticHighlightingReconciler.java:423)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.reconciled(SemanticHighlightingReconciler.java:470)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1674)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:228)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconciled(JavaCompositeReconcilingStrategy.java:171)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:115)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:78)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+Caused by: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.convertTokens(LSJavaSemanticTokensProvider.java:89)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.lambda$0(LSJavaSemanticTokensProvider.java:67)
+	at org.eclipse.lsp4e.operations.semanticTokens.SemanticTokensClient.lambda$2(SemanticTokensClient.java:49)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:646)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2179)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:223)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:449)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.lsp4e.operations.semanticTokens.AbstractcSemanticTokensDataStreamProcessor cannot be found by org.eclipse.lsp4e.jdt_0.13.7.202505091900
+	... 17 more
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:44.226
+!MESSAGE 23:11:44.223 [pool-2-thread-7] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:44.227
+!MESSAGE 23:11:44.225 [pool-2-thread-7] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:44.854
+!MESSAGE 23:11:44.327 [Reconciler-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:44.856
+!MESSAGE Failed to fetch semantic tokens for 'D:/Prathamesh/Project/ORVÉA/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java' from Language Servers
+!STACK 0
+java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.computeSemanticTokens(LSJavaSemanticTokensProvider.java:68)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.getContributedSemanticTokens(SemanticHighlightingReconciler.java:423)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.reconciled(SemanticHighlightingReconciler.java:470)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1674)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:228)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconciled(JavaCompositeReconcilingStrategy.java:171)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:115)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:78)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+Caused by: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.convertTokens(LSJavaSemanticTokensProvider.java:89)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.lambda$0(LSJavaSemanticTokensProvider.java:67)
+	at org.eclipse.lsp4e.operations.semanticTokens.SemanticTokensClient.lambda$2(SemanticTokensClient.java:49)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:646)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2179)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:223)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:449)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.lsp4e.operations.semanticTokens.AbstractcSemanticTokensDataStreamProcessor cannot be found by org.eclipse.lsp4e.jdt_0.13.7.202505091900
+	... 17 more
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:45.240
+!MESSAGE 23:11:44.859 [pool-2-thread-10] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:45.241
+!MESSAGE 23:11:45.240 [pool-2-thread-7] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/config/RolePermissionMatrix.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:48.876
+!MESSAGE 23:11:48.876 [ForkJoinPool.commonPool-worker-3] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/entity/RefreshToken.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:11:48.880
+!MESSAGE 23:11:48.879 [pool-2-thread-10] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/entity/RefreshToken.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:12:08.507
+!MESSAGE 23:12:08.506 [pool-13-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Invalidate AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/entity/UserSession.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:12:08.512
+!MESSAGE 23:12:08.511 [pool-2-thread-12] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/entity/UserSession.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:12:08.522
+!MESSAGE 23:12:08.522 [pool-4-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/entity/UserSession.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:12:08.845
+!MESSAGE 23:12:08.844 [ForkJoinPool.commonPool-worker-3] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/entity/UserSession.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:12:08.848
+!MESSAGE 23:12:08.848 [pool-2-thread-12] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/entity/UserSession.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:12:08.854
+!MESSAGE 23:12:08.853 [pool-2-thread-12] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/entity/UserSession.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:12:15.744
+!MESSAGE 23:12:09.012 [Reconciler-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/entity/UserSession.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:12:16.033
+!MESSAGE 23:12:16.028 [ForkJoinPool.commonPool-worker-3] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:12:16.034
+!MESSAGE 23:12:16.034 [pool-4-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Started parsing CU for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:12:16.037
+!MESSAGE Failed to fetch semantic tokens for 'D:/Prathamesh/Project/ORVÉA/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java' from Language Servers
+!STACK 0
+java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.computeSemanticTokens(LSJavaSemanticTokensProvider.java:68)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.getContributedSemanticTokens(SemanticHighlightingReconciler.java:423)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.reconciled(SemanticHighlightingReconciler.java:470)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1674)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:228)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconciled(JavaCompositeReconcilingStrategy.java:171)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:115)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:78)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+Caused by: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.convertTokens(LSJavaSemanticTokensProvider.java:89)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.lambda$0(LSJavaSemanticTokensProvider.java:67)
+	at org.eclipse.lsp4e.operations.semanticTokens.SemanticTokensClient.lambda$2(SemanticTokensClient.java:49)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:646)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2179)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:223)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:449)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.lsp4e.operations.semanticTokens.AbstractcSemanticTokensDataStreamProcessor cannot be found by org.eclipse.lsp4e.jdt_0.13.7.202505091900
+	... 17 more
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:12:16.042
+!MESSAGE 23:12:16.041 [pool-2-thread-12] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:12:16.484
+!MESSAGE 23:12:16.046 [pool-4-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:12:16.485
+!MESSAGE 23:12:16.046 [pool-7-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:12:16.485
+!MESSAGE 23:12:16.046 [pool-2-thread-12] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:12:16.485
+!MESSAGE 23:12:16.046 [pool-2-thread-7] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:12:17.075
+!MESSAGE Failed to fetch semantic tokens for 'D:/Prathamesh/Project/ORVÉA/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java' from Language Servers
+!STACK 0
+java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.computeSemanticTokens(LSJavaSemanticTokensProvider.java:68)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.getContributedSemanticTokens(SemanticHighlightingReconciler.java:423)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.reconciled(SemanticHighlightingReconciler.java:470)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1674)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:228)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconciled(JavaCompositeReconcilingStrategy.java:171)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:115)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:78)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+Caused by: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.convertTokens(LSJavaSemanticTokensProvider.java:89)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.lambda$0(LSJavaSemanticTokensProvider.java:67)
+	at org.eclipse.lsp4e.operations.semanticTokens.SemanticTokensClient.lambda$2(SemanticTokensClient.java:49)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:646)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2179)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:223)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:449)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.lsp4e.operations.semanticTokens.AbstractcSemanticTokensDataStreamProcessor cannot be found by org.eclipse.lsp4e.jdt_0.13.7.202505091900
+	... 17 more
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:12:17.078
+!MESSAGE 23:12:16.792 [pool-4-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:12:17.079
+!MESSAGE 23:12:17.078 [pool-2-thread-12] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:12:17.584
+!MESSAGE 23:12:17.081 [pool-2-thread-12] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:12:17.586
+!MESSAGE 23:12:17.585 [pool-2-thread-7] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/config/RolePermissionMatrix.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:12:24.472
+!MESSAGE 23:12:18.485 [pool-2-thread-12] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:12:24.472
+!MESSAGE 23:12:18.485 [pool-2-thread-12] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:12:24.473
+!MESSAGE 23:12:18.485 [pool-2-thread-12] INFO  o.s.i.v.c.l.u.SimpleTextDocumentService - hover computation done in 1ms
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:12:28.674
+!MESSAGE 23:12:27.933 [pool-2-thread-12] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:12:28.675
+!MESSAGE 23:12:27.933 [pool-2-thread-12] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:12:28.675
+!MESSAGE 23:12:27.933 [pool-2-thread-12] INFO  o.s.i.v.c.l.u.SimpleTextDocumentService - hover computation done in 0ms
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:12:28.914
+!MESSAGE 23:12:28.684 [pool-4-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:12:28.960
+!MESSAGE 23:12:28.924 [pool-4-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:12:28.960
+!MESSAGE Failed to fetch semantic tokens for 'D:/Prathamesh/Project/ORVÉA/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java' from Language Servers
+!STACK 0
+java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.computeSemanticTokens(LSJavaSemanticTokensProvider.java:68)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.getContributedSemanticTokens(SemanticHighlightingReconciler.java:423)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.reconciled(SemanticHighlightingReconciler.java:470)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1674)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:228)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconciled(JavaCompositeReconcilingStrategy.java:171)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:115)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:78)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+Caused by: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.convertTokens(LSJavaSemanticTokensProvider.java:89)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.lambda$0(LSJavaSemanticTokensProvider.java:67)
+	at org.eclipse.lsp4e.operations.semanticTokens.SemanticTokensClient.lambda$2(SemanticTokensClient.java:49)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:646)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2179)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:223)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:449)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.lsp4e.operations.semanticTokens.AbstractcSemanticTokensDataStreamProcessor cannot be found by org.eclipse.lsp4e.jdt_0.13.7.202505091900
+	... 17 more
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:12:28.961
+!MESSAGE 23:12:28.924 [pool-7-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:12:29.468
+!MESSAGE 23:12:28.963 [pool-2-thread-7] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:13:01.395
+!MESSAGE 23:12:29.480 [pool-4-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/config/RolePermissionMatrix.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:13:01.396
+!MESSAGE 23:13:01.379 [pool-2-thread-7] INFO  o.s.i.v.boot.app.SpringSymbolIndex - Update document [didSave event]: file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:13:01.403
+!MESSAGE 23:13:01.402 [Simple-Language-Server main thread] INFO  o.s.i.v.c.l.u.SimpleWorkspaceService - file changed event: [file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java]
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:13:02.412
+!MESSAGE 23:13:01.608 [pool-5-thread-1] INFO  o.s.i.v.b.j.utils.SpringIndexerJava - Finished scanning affected files [D:\Prathamesh\Project\ORVÉA\orvea-backend\auth-service\src\main\java\com\hms\auth\repository\RefreshTokenRepository.java]
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:13:02.936
+!MESSAGE 23:13:02.935 [ForkJoinPool.commonPool-worker-3] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:13:02.998
+!MESSAGE Failed to fetch semantic tokens for 'D:/Prathamesh/Project/ORVÉA/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java' from Language Servers
+!STACK 0
+java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.computeSemanticTokens(LSJavaSemanticTokensProvider.java:68)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.getContributedSemanticTokens(SemanticHighlightingReconciler.java:423)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.reconciled(SemanticHighlightingReconciler.java:470)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1674)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:228)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconciled(JavaCompositeReconcilingStrategy.java:171)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:115)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:78)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+Caused by: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.convertTokens(LSJavaSemanticTokensProvider.java:89)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.lambda$0(LSJavaSemanticTokensProvider.java:67)
+	at org.eclipse.lsp4e.operations.semanticTokens.SemanticTokensClient.lambda$2(SemanticTokensClient.java:49)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:646)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2179)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:223)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:449)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.lsp4e.operations.semanticTokens.AbstractcSemanticTokensDataStreamProcessor cannot be found by org.eclipse.lsp4e.jdt_0.13.7.202505091900
+	... 17 more
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:13:03.009
+!MESSAGE 23:13:02.997 [ForkJoinPool.commonPool-worker-3] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:13:56.375
+!MESSAGE 23:13:56.359 [pool-13-thread-1] INFO  o.s.i.v.c.l.u.SimpleTextDocumentService - change arrived: 26
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:13:56.655
+!MESSAGE 23:13:56.653 [ForkJoinPool.commonPool-worker-3] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:13:56.656
+!MESSAGE Failed to fetch semantic tokens for 'D:/Prathamesh/Project/ORVÉA/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java' from Language Servers
+!STACK 0
+java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.computeSemanticTokens(LSJavaSemanticTokensProvider.java:68)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.getContributedSemanticTokens(SemanticHighlightingReconciler.java:423)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.reconciled(SemanticHighlightingReconciler.java:470)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1674)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:228)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconciled(JavaCompositeReconcilingStrategy.java:171)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:115)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:78)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+Caused by: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.convertTokens(LSJavaSemanticTokensProvider.java:89)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.lambda$0(LSJavaSemanticTokensProvider.java:67)
+	at org.eclipse.lsp4e.operations.semanticTokens.SemanticTokensClient.lambda$2(SemanticTokensClient.java:49)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:646)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2179)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:223)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:449)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.lsp4e.operations.semanticTokens.AbstractcSemanticTokensDataStreamProcessor cannot be found by org.eclipse.lsp4e.jdt_0.13.7.202505091900
+	... 17 more
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:13:56.662
+!MESSAGE 23:13:56.660 [pool-2-thread-12] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:13:56.810
+!MESSAGE 23:13:56.809 [pool-13-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Invalidate AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:13:56.822
+!MESSAGE 23:13:56.822 [pool-4-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:13:57.128
+!MESSAGE Failed to fetch semantic tokens for 'D:/Prathamesh/Project/ORVÉA/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java' from Language Servers
+!STACK 0
+java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.computeSemanticTokens(LSJavaSemanticTokensProvider.java:68)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.getContributedSemanticTokens(SemanticHighlightingReconciler.java:423)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.reconciled(SemanticHighlightingReconciler.java:470)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1674)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:228)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconciled(JavaCompositeReconcilingStrategy.java:171)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:115)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:78)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+Caused by: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.convertTokens(LSJavaSemanticTokensProvider.java:89)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.lambda$0(LSJavaSemanticTokensProvider.java:67)
+	at org.eclipse.lsp4e.operations.semanticTokens.SemanticTokensClient.lambda$2(SemanticTokensClient.java:49)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:646)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2179)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:223)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:449)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.lsp4e.operations.semanticTokens.AbstractcSemanticTokensDataStreamProcessor cannot be found by org.eclipse.lsp4e.jdt_0.13.7.202505091900
+	... 17 more
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:13:57.132
+!MESSAGE 23:13:57.132 [pool-2-thread-7] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:13:58.043
+!MESSAGE 23:13:57.134 [pool-2-thread-12] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:13:58.400
+!MESSAGE Failed to fetch semantic tokens for 'D:/Prathamesh/Project/ORVÉA/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java' from Language Servers
+!STACK 0
+java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.computeSemanticTokens(LSJavaSemanticTokensProvider.java:68)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.getContributedSemanticTokens(SemanticHighlightingReconciler.java:423)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.reconciled(SemanticHighlightingReconciler.java:470)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1674)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:228)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconciled(JavaCompositeReconcilingStrategy.java:171)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:115)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:78)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+Caused by: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.convertTokens(LSJavaSemanticTokensProvider.java:89)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.lambda$0(LSJavaSemanticTokensProvider.java:67)
+	at org.eclipse.lsp4e.operations.semanticTokens.SemanticTokensClient.lambda$2(SemanticTokensClient.java:49)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:646)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2179)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:223)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:449)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.lsp4e.operations.semanticTokens.AbstractcSemanticTokensDataStreamProcessor cannot be found by org.eclipse.lsp4e.jdt_0.13.7.202505091900
+	... 17 more
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:13:58.404
+!MESSAGE 23:13:58.396 [ForkJoinPool.commonPool-worker-3] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:13:58.406
+!MESSAGE 23:13:58.404 [pool-2-thread-7] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:13:58.546
+!MESSAGE 23:13:58.545 [Reconciler-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:13:58.546
+!MESSAGE 23:13:58.545 [Reconciler-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:13:59.425
+!MESSAGE 23:13:58.922 [pool-13-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Invalidate AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:13:59.459
+!MESSAGE 23:13:59.433 [Reconciler-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:13:59.461
+!MESSAGE 23:13:59.459 [pool-2-thread-12] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:14:00.479
+!MESSAGE Failed to fetch semantic tokens for 'D:/Prathamesh/Project/ORVÉA/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java' from Language Servers
+!STACK 0
+java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.computeSemanticTokens(LSJavaSemanticTokensProvider.java:68)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.getContributedSemanticTokens(SemanticHighlightingReconciler.java:423)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.reconciled(SemanticHighlightingReconciler.java:470)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1674)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:228)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconciled(JavaCompositeReconcilingStrategy.java:171)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:115)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:78)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+Caused by: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.convertTokens(LSJavaSemanticTokensProvider.java:89)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.lambda$0(LSJavaSemanticTokensProvider.java:67)
+	at org.eclipse.lsp4e.operations.semanticTokens.SemanticTokensClient.lambda$2(SemanticTokensClient.java:49)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:646)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2179)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:223)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:449)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.lsp4e.operations.semanticTokens.AbstractcSemanticTokensDataStreamProcessor cannot be found by org.eclipse.lsp4e.jdt_0.13.7.202505091900
+	... 17 more
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:14:00.483
+!MESSAGE 23:14:00.477 [ForkJoinPool.commonPool-worker-3] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:14:07.765
+!MESSAGE 23:14:00.484 [pool-2-thread-7] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:14:07.997
+!MESSAGE 23:14:07.982 [Simple-Language-Server main thread] INFO  o.s.i.v.c.l.u.SimpleWorkspaceService - file changed event: [file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/target/classes/application.yml, file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/target/classes/com/hms/auth/repository/RefreshTokenRepository.class]
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:14:08.498
+!MESSAGE 23:14:08.497 [ForkJoinPool.commonPool-worker-3] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:14:08.555
+!MESSAGE 23:14:08.554 [pool-4-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:14:08.558
+!MESSAGE Failed to fetch semantic tokens for 'D:/Prathamesh/Project/ORVÉA/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java' from Language Servers
+!STACK 0
+java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.computeSemanticTokens(LSJavaSemanticTokensProvider.java:68)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.getContributedSemanticTokens(SemanticHighlightingReconciler.java:423)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.reconciled(SemanticHighlightingReconciler.java:470)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1674)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:228)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconciled(JavaCompositeReconcilingStrategy.java:171)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:115)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:78)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+Caused by: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.convertTokens(LSJavaSemanticTokensProvider.java:89)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.lambda$0(LSJavaSemanticTokensProvider.java:67)
+	at org.eclipse.lsp4e.operations.semanticTokens.SemanticTokensClient.lambda$2(SemanticTokensClient.java:49)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:646)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2179)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:223)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:449)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.lsp4e.operations.semanticTokens.AbstractcSemanticTokensDataStreamProcessor cannot be found by org.eclipse.lsp4e.jdt_0.13.7.202505091900
+	... 17 more
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:14:08.560
+!MESSAGE 23:14:08.560 [pool-2-thread-7] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:14:08.563
+!MESSAGE 23:14:08.562 [pool-2-thread-12] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:14:08.565
+!MESSAGE 23:14:08.563 [pool-2-thread-12] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:14:46.194
+!MESSAGE 23:14:14.294 [pool-13-thread-1] INFO  o.s.i.v.b.j.l.v.SpringProcessConnectorRemote - updating settings for remote processses to track - done
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:15:18.302
+!MESSAGE 23:14:56.071 [pool-4-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Started parsing CU for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/entity/RefreshToken.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:15:18.315
+!MESSAGE 23:15:18.314 [pool-4-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/entity/RefreshToken.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:15:18.600
+!MESSAGE 23:15:18.599 [pool-13-thread-1] INFO  o.s.i.v.c.l.u.SimpleTextDocumentService - change arrived: 3
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:15:19.048
+!MESSAGE 23:15:19.047 [ForkJoinPool.commonPool-worker-6] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/entity/RefreshToken.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:15:19.052
+!MESSAGE 23:15:19.051 [pool-2-thread-12] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/entity/RefreshToken.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:15:42.047
+!MESSAGE 23:15:19.101 [Reconciler-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/entity/RefreshToken.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:15:42.047
+!MESSAGE 23:15:42.046 [pool-13-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Invalidate AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/entity/RefreshToken.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:15:42.058
+!MESSAGE 23:15:42.057 [pool-4-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/entity/RefreshToken.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:15:42.315
+!MESSAGE 23:15:42.315 [ForkJoinPool.commonPool-worker-6] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/entity/RefreshToken.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:15:42.316
+!MESSAGE 23:15:42.315 [ForkJoinPool.commonPool-worker-6] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/entity/RefreshToken.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:15:42.319
+!MESSAGE 23:15:42.318 [pool-2-thread-12] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/entity/RefreshToken.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:16:36.373
+!MESSAGE 23:16:26.312 [pool-12-thread-1] INFO  o.s.i.v.c.l.u.ParentProcessWatcher - The tasklist command: 'cmd /c "tasklist /FI "PID eq 26608" | findstr 26608"' returns 255
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:16:39.807
+!MESSAGE 23:16:39.804 [pool-4-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:16:45.439
+!MESSAGE 23:16:39.808 [pool-2-thread-7] INFO  o.s.i.v.c.l.u.SimpleTextDocumentService - hover computation done in 24ms
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:16:45.440
+!MESSAGE 23:16:44.543 [pool-2-thread-7] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:16:45.451
+!MESSAGE 23:16:45.450 [pool-4-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:16:45.705
+!MESSAGE 23:16:45.705 [ForkJoinPool.commonPool-worker-5] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:16:45.706
+!MESSAGE 23:16:45.705 [ForkJoinPool.commonPool-worker-5] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:16:45.710
+!MESSAGE Failed to fetch semantic tokens for 'D:/Prathamesh/Project/ORVÉA/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java' from Language Servers
+!STACK 0
+java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.computeSemanticTokens(LSJavaSemanticTokensProvider.java:68)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.getContributedSemanticTokens(SemanticHighlightingReconciler.java:423)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.reconciled(SemanticHighlightingReconciler.java:470)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1674)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:228)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconciled(JavaCompositeReconcilingStrategy.java:171)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:115)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:78)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+Caused by: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.convertTokens(LSJavaSemanticTokensProvider.java:89)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.lambda$0(LSJavaSemanticTokensProvider.java:67)
+	at org.eclipse.lsp4e.operations.semanticTokens.SemanticTokensClient.lambda$2(SemanticTokensClient.java:49)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:646)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2179)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:223)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:449)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.lsp4e.operations.semanticTokens.AbstractcSemanticTokensDataStreamProcessor cannot be found by org.eclipse.lsp4e.jdt_0.13.7.202505091900
+	... 17 more
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:16:45.944
+!MESSAGE 23:16:45.712 [pool-2-thread-7] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:16:45.944
+!MESSAGE 23:16:45.943 [Reconciler-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:16:57.939
+!MESSAGE 23:16:45.955 [Reconciler-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:16:57.947
+!MESSAGE 23:16:57.946 [Simple-Language-Server main thread] INFO  o.s.i.v.c.l.u.SimpleWorkspaceService - file changed event: [file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java]
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:16:58.671
+!MESSAGE 23:16:58.152 [Simple-Language-Server main thread] INFO  o.s.i.v.c.l.u.SimpleWorkspaceService - file changed event: [file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/target/classes/application.yml, file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/target/classes/com/hms/auth/repository/RefreshTokenRepository.class]
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:16:58.672
+!MESSAGE 23:16:58.671 [ForkJoinPool.commonPool-worker-5] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:16:58.739
+!MESSAGE 23:16:58.737 [pool-4-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:16:58.739
+!MESSAGE Failed to fetch semantic tokens for 'D:/Prathamesh/Project/ORVÉA/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java' from Language Servers
+!STACK 0
+java.util.concurrent.ExecutionException: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.computeSemanticTokens(LSJavaSemanticTokensProvider.java:68)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.getContributedSemanticTokens(SemanticHighlightingReconciler.java:423)
+	at org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.reconciled(SemanticHighlightingReconciler.java:470)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1674)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:228)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconciled(JavaCompositeReconcilingStrategy.java:171)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:115)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:78)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+Caused by: java.lang.NoClassDefFoundError: org/eclipse/lsp4e/operations/semanticTokens/AbstractcSemanticTokensDataStreamProcessor
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.convertTokens(LSJavaSemanticTokensProvider.java:89)
+	at org.eclipse.lsp4e.jdt.LSJavaSemanticTokensProvider.lambda$0(LSJavaSemanticTokensProvider.java:67)
+	at org.eclipse.lsp4e.operations.semanticTokens.SemanticTokensClient.lambda$2(SemanticTokensClient.java:49)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:646)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2179)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:223)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:449)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.lsp4e.operations.semanticTokens.AbstractcSemanticTokensDataStreamProcessor cannot be found by org.eclipse.lsp4e.jdt_0.13.7.202505091900
+	... 17 more
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:16:58.743
+!MESSAGE 23:16:58.742 [pool-2-thread-13] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:17:07.304
+!MESSAGE 23:16:58.745 [pool-2-thread-7] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:17:07.319
+!MESSAGE 23:17:07.319 [pool-6-thread-3] INFO  o.s.i.v.b.j.l.v.SpringProcessConnectorService - Refreshing data from Spring process: service:jmx:rmi:///jndi/rmi://127.0.0.1:62909/jmxrmi - retry no: 0
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:17:07.480
+!MESSAGE 23:17:07.480 [pool-4-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Started parsing CU for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/entity/UserSession.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:17:07.492
+!MESSAGE 23:17:07.491 [pool-4-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/entity/UserSession.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:17:07.495
+!MESSAGE 23:17:07.495 [pool-7-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/repository/RefreshTokenRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:17:07.503
+!MESSAGE 23:17:07.503 [pool-4-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/entity/RefreshToken.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:17:07.504
+!MESSAGE 23:17:07.504 [pool-7-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/config/RolePermissionMatrix.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:17:07.520
+!MESSAGE 23:17:07.520 [pool-4-thread-2] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///D:/Prathamesh/Project/ORV%C3%89A/orvea-backend/auth-service/src/main/java/com/hms/auth/config/RolePermissionMatrix.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:18:26.635
+!MESSAGE 23:18:16.583 [pool-12-thread-1] INFO  o.s.i.v.c.l.u.ParentProcessWatcher - The tasklist command: 'cmd /c "tasklist /FI "PID eq 26608" | findstr 26608"' returns 255
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:18:56.809
+!MESSAGE 23:18:46.748 [pool-12-thread-1] INFO  o.s.i.v.c.l.u.ParentProcessWatcher - The tasklist command: 'cmd /c "tasklist /FI "PID eq 26608" | findstr 26608"' returns 255
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:19:27.165
+!MESSAGE 23:19:17.097 [pool-12-thread-1] INFO  o.s.i.v.c.l.u.ParentProcessWatcher - The tasklist command: 'cmd /c "tasklist /FI "PID eq 26608" | findstr 26608"' returns 255
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-10-12 23:19:57.371
+!MESSAGE 23:19:47.313 [pool-12-thread-1] INFO  o.s.i.v.c.l.u.ParentProcessWatcher - The tasklist command: 'cmd /c "tasklist /FI "PID eq 26608" | findstr 26608"' returns 255
