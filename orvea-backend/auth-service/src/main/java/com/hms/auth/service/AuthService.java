@@ -1,13 +1,18 @@
 package com.hms.auth.service;
 
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.UUID;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.hms.auth.dto.ChangePasswordRequest;
 import com.hms.auth.dto.LoginRequest;
+import com.hms.auth.dto.SessionResponse;
 import com.hms.auth.dto.TokenResponse;
+import com.hms.auth.dto.UserSummary;
 import com.hms.auth.entity.RefreshToken;
 import com.hms.auth.entity.User;
 import com.hms.auth.entity.UserSession;
@@ -19,6 +24,7 @@ import com.hms.auth.util.HashUtil;
 import com.hms.auth.util.UserMapper;
 import com.hms.common.exception.BusinessException;
 import com.hms.common.exception.ForbiddenException;
+import com.hms.common.exception.ResourceNotFoundException;
 import com.hms.common.exception.UnauthorizedException;
 import com.hms.common.security.AuthenticatedUser;
 import com.hms.common.security.JwtProperties;
@@ -40,11 +46,11 @@ public class AuthService {
 	private final PasswordEncoder passwordEncoder;
 	private final JwtProperties jwtProperties;
 	private final JwtTokenUtil jwtTokenUtil;
-	
+
 	private final UserRepository userRepository;
 	private final UserSessionRepository sessionRepository;
 	private final RefreshTokenRepository refreshTokenRepository;
-	
+
 	private final SessionBlaklistService sessionBlaklistService;
 
 	// noRollbackFor: failed-attempt counters must be committed even when we throw
@@ -122,6 +128,47 @@ public class AuthService {
 		TokenResponse response = issueTokens(user, session);
 		stored.setReplacedByHash(HashUtil.sha256(response.refreshToken()));
 		return response;
+	}
+
+	@Transactional
+	public void logout(UUID sessionId, UUID userId) {
+		sessionRepository.findByIdAndUserId(sessionId, userId).ifPresent(s -> terminateSession(s, "User logout"));
+	}
+
+	@Transactional
+	public void logoutAll(UUID userId) {
+		sessionRepository.findByUserIdAndStatus(userId, SessionStatus.ACTIVE)
+				.forEach(s -> terminateSession(s, "Logout from all devices"));
+	}
+
+	@Transactional
+	public UserSummary me(UUID userId) {
+		return UserMapper.toSummary(
+				userRepository.findById(userId).orElseThrow(() -> new ResourceNotFoundException("User", userId)));
+	}
+
+	@Transactional
+	public void changePassword(UUID userId, ChangePasswordRequest req) {
+		User user = userRepository.findById(userId).orElseThrow(() -> new ResourceNotFoundException("User", userId));
+		if (!passwordEncoder.matches(req.currentPassword(), user.getPasswordHash())) {
+			throw new BusinessException("Current password is incorrect");
+		}
+		if (passwordEncoder.matches(req.newPassword(), user.getPasswordHash())) {
+			throw new BusinessException("New password must differ from current password");
+		}
+
+		user.setPasswordHash(passwordEncoder.encode(req.newPassword()));
+		user.setMustChangePassword(false);
+		logoutAll(userId); // force re-login everywhere
+	}
+
+	@Transactional(readOnly = true)
+	public List<SessionResponse> activeSessions(UUID userId, String currentSessionId) {
+		return sessionRepository.findByUserIdAndStatus(userId, SessionStatus.ACTIVE).stream()
+				.map(s -> new SessionResponse(s.getId(), s.getIpAddress(), s.getUserAgent(), s.getLoginAt(),
+						s.getLastAccessAt(), s.getExpiresAt(), s.getStatus(),
+						s.getId().toString().equals(currentSessionId)))
+				.toList();
 	}
 
 	// Helper Methods

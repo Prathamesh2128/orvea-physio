@@ -3,6 +3,8 @@ package com.hms.auth.repository;
 import java.util.Optional;
 import java.util.UUID;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.hms.auth.entity.User;
@@ -13,4 +15,7 @@ public interface UserRepository extends JpaRepository<User, UUID> {
 	boolean existsByUsernameIgnoreCase(String username);
 
 	boolean existsByEmailIgnoreCase(String email);
+
+	Page<User> findByUsernameContainingIgnoreCaseOrEmailContainingIgnoreCaseOrFirstNameContainingIgnoreCase(
+			String username, String email, String firstName, Pageable pageable);
 }
