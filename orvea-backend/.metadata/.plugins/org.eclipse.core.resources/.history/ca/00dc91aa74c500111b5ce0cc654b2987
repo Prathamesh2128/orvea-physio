@@ -1,5 +1,0 @@
-package com.hms.auth.repository;
-
-public class RefreshTokenRepository {
-
-}

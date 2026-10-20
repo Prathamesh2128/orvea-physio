@@ -1,5 +1,0 @@
-package com.hms.security;
-
-public class AuditorAwareImpl {
-
-}

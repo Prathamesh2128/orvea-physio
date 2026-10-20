@@ -1,7 +1,0 @@
-package com.hms.security;
-
-import java.util.List;
-
-public record AuthenticatedUser(Long userId, String username, Long clinicId, List<String> roles,
-		List<String> permissions) {
-}

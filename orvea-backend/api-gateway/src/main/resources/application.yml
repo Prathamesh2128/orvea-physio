@@ -16,7 +16,7 @@ spring:
             - id: patient-service
               uri: lb://patient-service
               predicates:
-                - Path=/api/v1/patients/**
+                - Path=/api/v1/patients/**, /api/v1/conditions/**
             - id: staff-service
               uri: lb://staff-service
               predicates:

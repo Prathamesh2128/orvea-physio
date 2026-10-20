@@ -1,11 +1,28 @@
-Eclipse workspace metadata
+
+# Eclipse / Spring Tool Suite workspace
 .metadata/
+**/.metadata/
 
-Java build output
-/target/
+# Java build files
+**/target/
+**/build/
+**/bin/
 
-IDE files
-.idea/ *.iml
+# IDE files
+**/.settings/
+**/.classpath
+**/.project
+.idea/
+.vscode/
 
-Logs
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Logs
 *.log
+
+# OS files
+Thumbs.db
+.DS_Store

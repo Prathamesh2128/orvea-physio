@@ -1,0 +1,34 @@
+server:
+  port: 8002
+
+spring:
+  application:
+    name: patient-service
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:3306/hms_patient?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: ${DB_USER:root}
+    password: ${DB_PASSWORD:pgdac}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${EUREKA_USER:eureka}:${EUREKA_PASSWORD:eureka123}@${EUREKA_HOST:localhost}:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+physio:
+  patient:
+    uhid-prefix: ${UHID_PREFIX:PH}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics

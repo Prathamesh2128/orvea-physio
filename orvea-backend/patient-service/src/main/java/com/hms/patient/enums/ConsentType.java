@@ -1,0 +1,5 @@
+package com.hms.patient.enums;
+
+public enum ConsentType {
+	TREATMENT, PHOTO_VIDEO, CAMERA_POSE_ANALYSIS, DATA_SHARING, REMINDER_SMS_WHATSAPP, RESEARCH
+}

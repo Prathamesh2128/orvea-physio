@@ -23,65 +23,65 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Every business entity extends this.
- * NOTE: add  @SQLRestriction("is_deleted = false")  on each concrete entity
- * so soft-deleted rows are hidden from all queries automatically.
+ * Every business entity extends this. Add @SQLRestriction("is_deleted = false")
+ * on each concrete entity so soft-deleted rows are hidden from all queries
+ * automatically.
  */
+@SuppressWarnings("serial")
 @Getter
 @Setter
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
 public abstract class BaseEntity implements Serializable {
-	private static final long serialVersionUID = 1L;
 
 	@Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    @JdbcTypeCode(SqlTypes.CHAR)
-    @Column(name = "id", columnDefinition = "CHAR(36)", updatable = false, nullable = false)
-    private UUID id;
+	@GeneratedValue(strategy = GenerationType.UUID)
+	@JdbcTypeCode(SqlTypes.CHAR)
+	@Column(name = "id", columnDefinition = "CHAR(36)", updatable = false, nullable = false)
+	private UUID id;
 
-    /** Multi-clinic / generic hospital support. */
-    @JdbcTypeCode(SqlTypes.CHAR)
-    @Column(name = "clinic_id", columnDefinition = "CHAR(36)")
-    private UUID clinicId;
+	/** Multi-clinic / generic hospital support. */
+	@JdbcTypeCode(SqlTypes.CHAR)
+	@Column(name = "clinic_id", columnDefinition = "CHAR(36)")
+	private UUID clinicId;
 
-    @CreatedDate
-    @Column(name = "created_at", nullable = false, updatable = false)
-    private LocalDateTime createdAt;
+	@CreatedDate
+	@Column(name = "created_at", nullable = false, updatable = false)
+	private LocalDateTime createdAt;
 
-    @LastModifiedDate
-    @Column(name = "updated_at")
-    private LocalDateTime updatedAt;
+	@LastModifiedDate
+	@Column(name = "updated_at")
+	private LocalDateTime updatedAt;
 
-    @CreatedBy
-    @Column(name = "created_by", updatable = false, length = 100)
-    private String createdBy;
+	@CreatedBy
+	@Column(name = "created_by", updatable = false, length = 100)
+	private String createdBy;
 
-    @LastModifiedBy
-    @Column(name = "updated_by", length = 100)
-    private String updatedBy;
+	@LastModifiedBy
+	@Column(name = "updated_by", length = 100)
+	private String updatedBy;
 
-    @Column(name = "is_deleted", nullable = false)
-    private boolean deleted = false;
+	@Column(name = "is_deleted", nullable = false)
+	private boolean deleted = false;
 
-    @Column(name = "deleted_at")
-    private LocalDateTime deletedAt;
+	@Column(name = "deleted_at")
+	private LocalDateTime deletedAt;
 
-    @Column(name = "deleted_by", length = 100)
-    private String deletedBy;
+	@Column(name = "deleted_by", length = 100)
+	private String deletedBy;
 
-    @Version
-    private Long version;
+	@Version
+	private Long version;
 
-    public void softDelete(String by) {
-        this.deleted = true;
-        this.deletedAt = LocalDateTime.now();
-        this.deletedBy = by;
-    }
+	public void softDelete(String by) {
+		this.deleted = true;
+		this.deletedAt = LocalDateTime.now();
+		this.deletedBy = by;
+	}
 
-    public void restore() {
-        this.deleted = false;
-        this.deletedAt = null;
-        this.deletedBy = null;
-    }
+	public void restore() {
+		this.deleted = false;
+		this.deletedAt = null;
+		this.deletedBy = null;
+	}
 }
