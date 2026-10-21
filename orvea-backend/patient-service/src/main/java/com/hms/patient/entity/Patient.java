@@ -65,6 +65,9 @@ public class Patient extends BaseEntity {
 	@Column(nullable = false, length = 20)
 	private String phone;
 
+	@Column(name = "alternate_phone", length = 20)
+	private String alternatePhone;
+
 	@Column(length = 150)
 	private String email;
 

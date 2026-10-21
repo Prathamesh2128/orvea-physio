@@ -68,7 +68,12 @@ public class TreatmentCase extends BaseEntity {
 	@Column(name = "completed_sessions", nullable = false)
 	private int completedSessions = 0;
 
+	@Enumerated(EnumType.STRING)
+	@Column(nullable = false, length = 15)
 	private CaseStatus status = CaseStatus.PLANNED;
+
+	@Column(name = "start_date")
+	private LocalDate startDate;
 
 	@Column(name = "expected_end_date")
 	private LocalDate expectedEndDate;
