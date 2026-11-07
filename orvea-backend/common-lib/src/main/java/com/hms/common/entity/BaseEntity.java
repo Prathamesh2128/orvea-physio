@@ -74,8 +74,13 @@ public abstract class BaseEntity implements Serializable {
 	private Long version;
 
 	public void softDelete(String by) {
+		softDelete(by, LocalDateTime.now());
+	}
+
+	// Same timestamp can be shared by a parent and its children so they can be restored together.
+	public void softDelete(String by, LocalDateTime at) {
 		this.deleted = true;
-		this.deletedAt = LocalDateTime.now();
+		this.deletedAt = at;
 		this.deletedBy = by;
 	}
 

@@ -8,6 +8,7 @@ import java.util.UUID;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
@@ -49,4 +50,40 @@ public interface PatientRepository extends JpaRepository<Patient, UUID> {
 
 	@Query("SELECT p FROM Patient p WHERE LOWER(p.email) = LOWER(:email) AND (:clinicId is null or p.clinicId = :clinicId)")
 	List<Patient> findByEmail(@Param("email") String email, @Param("clinicId") UUID clinicId);
+
+	@Query(value = """
+			select id as id, clinic_id as clinicId, user_id as userId, uhid as uhid, first_name as firstName,
+			       last_name as lastName, phone as phone, deleted_at as deletedAt, deleted_by as deletedBy
+			from patients where id = :id and is_deleted = true
+			""", nativeQuery = true)
+	Optional<DeletedPatientView> findDeletedById(@Param("id") String id);
+
+	@Query(value = """
+			select id as id, clinic_id as clinicId, user_id as userId, uhid as uhid, first_name as firstName,
+			       last_name as lastName, phone as phone, deleted_at as deletedAt, deleted_by as deletedBy
+			from patients where is_deleted = true and (:clinicId is null or clinic_id = :clinicId)
+			order by deleted_at desc limit 100
+			""", nativeQuery = true)
+	List<DeletedPatientView> findDeleted(@Param("clinicId") String clinicId);
+
+	/**
+	 * Restores only cases that were deleted together with the patient (identical
+	 * deleted_at).
+	 */
+	@Modifying
+	@Query(value = """
+			update treatment_cases c join patients p on p.id = c.patient_id
+			set c.is_deleted = false, c.deleted_at = null, c.deleted_by = null,
+			    c.updated_by = :by, c.updated_at = now()
+			where p.id = :id and p.is_deleted = true and c.is_deleted = true and c.deleted_at = p.deleted_at
+			""", nativeQuery = true)
+	int restoreCasesDeletedWithPatient(@Param("id") String id, @Param("by") String by);
+
+	@Modifying
+	@Query(value = """
+			update patients set is_deleted = false, deleted_at = null, deleted_by = null,
+			       updated_by = :by, updated_at = now()
+			where id = :id and is_deleted = true
+			""", nativeQuery = true)
+	int restorePatient(@Param("id") String id, @Param("by") String by);
 }

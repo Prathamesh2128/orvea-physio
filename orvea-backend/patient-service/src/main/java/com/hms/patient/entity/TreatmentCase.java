@@ -62,6 +62,9 @@ public class TreatmentCase extends BaseEntity {
 	@Column(name = "primary_therapist_id", columnDefinition = "CHAR(36)")
 	private UUID primaryTherapistId;
 
+	@Column(name = "primary_therapist_name", length = 200)
+    private String primaryTherapistName;
+	
 	@Column(name = "planned_sessions", nullable = false)
 	private int plannedSessions;
 

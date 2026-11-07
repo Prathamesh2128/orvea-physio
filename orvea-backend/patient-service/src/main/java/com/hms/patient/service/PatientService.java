@@ -1,6 +1,7 @@
 package com.hms.patient.service;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -19,11 +20,15 @@ import com.hms.common.exception.ResourceNotFoundException;
 import com.hms.common.security.AuthenticatedUser;
 import com.hms.common.security.ClinicScope;
 import com.hms.common.security.SecurityUtils;
+import com.hms.patient.dto.DeletedPatientSummary;
 import com.hms.patient.dto.DuplicateCandidate;
+import com.hms.patient.dto.PatientRef;
 import com.hms.patient.dto.PatientRequest;
 import com.hms.patient.dto.PatientResponse;
 import com.hms.patient.dto.PatientSummary;
 import com.hms.patient.entity.Patient;
+import com.hms.patient.enums.PatientStatus;
+import com.hms.patient.repository.DeletedPatientView;
 import com.hms.patient.repository.PatientRepository;
 import com.hms.patient.repository.TreatmentCaseRepository;
 import com.hms.patient.util.PatientMapper;
@@ -128,8 +133,43 @@ public class PatientService {
 	public void delete(UUID id) {
 		Patient p = find(id);
 		String by = SecurityUtils.currentUsername();
-		treatmentCaseRepository.findByPatientId(id).forEach(c -> c.softDelete(by));
-		p.softDelete(by);
+		LocalDateTime at = LocalDateTime.now(); // one timestamp: lets restore bring the cases back too
+		treatmentCaseRepository.findByPatientId(id).forEach(c -> c.softDelete(by, at));
+		p.softDelete(by, at);
+	}
+
+	@Transactional(readOnly = true)
+	public List<DeletedPatientSummary> listDeleted() {
+		UUID clinic = ClinicScope.currentClinicId();
+		return patientRepository.findDeleted(clinic == null ? null : clinic.toString()).stream()
+				.map(v -> new DeletedPatientSummary(UUID.fromString(v.getId()), v.getUhid(),
+						v.getLastName() == null ? v.getFirstName() : v.getFirstName() + " " + v.getLastName(),
+						v.getPhone(), v.getDeletedAt(), v.getDeletedBy()))
+				.toList();
+	}
+
+	@Transactional
+	public PatientResponse restore(UUID id) {
+		DeletedPatientView v = patientRepository.findDeletedById(id.toString())
+				.orElseThrow(() -> new ResourceNotFoundException("Deleted patient", id));
+		ClinicScope.assertSameClinic(v.getClinicId() == null ? null : UUID.fromString(v.getClinicId()),
+				"Deleted patient", id);
+		if (v.getUserId() != null && patientRepository.existsByUserId(UUID.fromString(v.getUserId()))) {
+			throw new DuplicateResourceException(
+					"The login user linked to this patient now belongs to another patient");
+		}
+		String by = SecurityUtils.currentUsername();
+		patientRepository.restoreCasesDeletedWithPatient(id.toString(), by); // before the patient row changes
+		patientRepository.restorePatient(id.toString(), by);
+		return get(id);
+	}
+
+	/** Minimal view for other services (appointment-service). */
+	@Transactional(readOnly = true)
+	public PatientRef getRef(UUID id) {
+		Patient p = find(id);
+		return new PatientRef(p.getId(), p.getUhid(), p.getFullName(), p.getPhone(), p.getCountryCode(),
+				p.getStatus() == PatientStatus.ACTIVE, p.getClinicId());
 	}
 
 	// Helper Methods

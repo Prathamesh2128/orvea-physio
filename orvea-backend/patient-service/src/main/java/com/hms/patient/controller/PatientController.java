@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.hms.common.api.ApiResponse;
 import com.hms.common.api.PageResponse;
 import com.hms.common.security.ClinicScope;
+import com.hms.patient.dto.DeletedPatientSummary;
 import com.hms.patient.dto.DuplicateCandidate;
 import com.hms.patient.dto.PatientRequest;
 import com.hms.patient.dto.PatientResponse;
@@ -89,5 +90,17 @@ public class PatientController {
 	public ApiResponse<Void> delete(@PathVariable UUID id) {
 		patientService.delete(id);
 		return ApiResponse.ok("Patient deleted", null);
+	}
+
+	@GetMapping("/deleted")
+	@PreAuthorize("hasAuthority('PATIENT_DELETE')")
+	public ApiResponse<List<DeletedPatientSummary>> deleted() {
+		return ApiResponse.ok(patientService.listDeleted());
+	}
+
+	@PostMapping("/{id}/restore")
+	@PreAuthorize("hasAuthority('PATIENT_DELETE')")
+	public ApiResponse<PatientResponse> restore(@PathVariable UUID id) {
+		return ApiResponse.ok("Patient restored", patientService.restore(id));
 	}
 }

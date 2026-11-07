@@ -46,9 +46,10 @@ public class PatientMapper {
 
 	public static CaseResponse toResponse(TreatmentCase c) {
 		return new CaseResponse(c.getId(), c.getPatient().getId(), c.getCaseNumber(), c.getDiagnosis(), c.getIcdCode(),
-				c.getBodyRegion(), c.getLaterality(), c.getPrimaryTherapistId(), c.getPlannedSessions(),
-				c.getCompletedSessions(), c.getStatus(), c.getStartDate(), c.getExpectedEndDate(), c.getClosedOn(),
-				c.getClosureReason(), c.getNotes(), c.getConditions().stream().map(PatientMapper::toResponse).toList());
+				c.getBodyRegion(), c.getLaterality(), c.getPrimaryTherapistId(), c.getPrimaryTherapistName(),
+				c.getPlannedSessions(), c.getCompletedSessions(), c.getStatus(), c.getStartDate(),
+				c.getExpectedEndDate(), c.getClosedOn(), c.getClosureReason(), c.getNotes(),
+				c.getConditions().stream().map(PatientMapper::toResponse).toList());
 	}
 
 	public static CareTeamResponse toResponse(CareTeamMember m) {

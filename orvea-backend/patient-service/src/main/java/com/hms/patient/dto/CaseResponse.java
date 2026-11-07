@@ -9,8 +9,7 @@ import com.hms.common.enums.Laterality;
 import com.hms.patient.enums.CaseStatus;
 
 public record CaseResponse(UUID id, UUID patientId, String caseNumber, String diagnosis, String icdCode,
-		BodyRegion bodyRegion, Laterality laterality, UUID primaryTherapistId, int plannedSessions,
-		int completedSessions, CaseStatus status, LocalDate startDate, LocalDate expectedEndDate, LocalDate closedOn,
-		String closureReason, String notes, List<ConditionResponse> conditions) {
-
+		BodyRegion bodyRegion, Laterality laterality, UUID primaryTherapistId, String primaryTherapistName,
+		int plannedSessions, int completedSessions, CaseStatus status, LocalDate startDate, LocalDate expectedEndDate,
+		LocalDate closedOn, String closureReason, String notes, List<ConditionResponse> conditions) {
 }

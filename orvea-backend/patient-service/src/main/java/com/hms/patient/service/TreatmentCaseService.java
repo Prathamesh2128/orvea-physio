@@ -2,6 +2,7 @@ package com.hms.patient.service;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
 import org.springframework.stereotype.Service;
@@ -12,10 +13,12 @@ import com.hms.common.exception.DuplicateResourceException;
 import com.hms.common.exception.ResourceNotFoundException;
 import com.hms.common.security.ClinicScope;
 import com.hms.common.security.SecurityUtils;
+import com.hms.patient.client.StaffClient;
 import com.hms.patient.dto.CaseRequest;
 import com.hms.patient.dto.CaseResponse;
 import com.hms.patient.dto.CaseStatusRequest;
 import com.hms.patient.dto.ConditionRequest;
+import com.hms.patient.dto.StaffRef;
 import com.hms.patient.entity.CaseCondition;
 import com.hms.patient.entity.ConditionMaster;
 import com.hms.patient.entity.Patient;
@@ -34,7 +37,8 @@ public class TreatmentCaseService {
 	private final TreatmentCaseRepository treatmentCaseRepository;
 	private final PatientRepository patientRepository;
 	private final ConditionMasterRepository conditionMasterRepository;
-
+	private final StaffClient staffClient;
+	
 	@Transactional
 	public CaseResponse create(UUID patientId, CaseRequest req) {
 		Patient patient = loadPatient(patientId);
@@ -48,6 +52,7 @@ public class TreatmentCaseService {
 		c.setStatus(CaseStatus.PLANNED);
 		c.setCompletedSessions(0);
 		applyFields(c, req);
+        assignTherapist(c, req.primaryTherapistId());
 
 		if (req.conditions() != null) {
 			req.conditions().forEach(cr -> attachCondition(c, cr));
@@ -79,6 +84,9 @@ public class TreatmentCaseService {
 					"Planned sessions cannot be lower than completed sessions (" + c.getCompletedSessions() + ")");
 		}
 		applyFields(c, req);
+        if (!Objects.equals(c.getPrimaryTherapistId(), req.primaryTherapistId())) {
+            assignTherapist(c, req.primaryTherapistId());
+        }
 		return PatientMapper.toResponse(c);
 	}
 
@@ -195,4 +203,15 @@ public class TreatmentCaseService {
 		ClinicScope.assertSameClinic(c.getClinicId(), "Treatment case", caseId);
 		return c;
 	}
+	
+    private void assignTherapist(TreatmentCase c, UUID therapistId) {
+        if (therapistId == null) {
+            c.setPrimaryTherapistId(null);
+            c.setPrimaryTherapistName(null);
+            return;
+        }
+        StaffRef ref = staffClient.requireBookable(therapistId);   // exists, same clinic, active, treating role
+        c.setPrimaryTherapistId(therapistId);
+        c.setPrimaryTherapistName(ref.displayName());
+    }
 }
