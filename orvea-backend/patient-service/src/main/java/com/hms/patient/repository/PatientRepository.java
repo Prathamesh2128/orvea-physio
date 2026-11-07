@@ -70,20 +70,20 @@ public interface PatientRepository extends JpaRepository<Patient, UUID> {
 	 * Restores only cases that were deleted together with the patient (identical
 	 * deleted_at).
 	 */
-	@Modifying
+	@Modifying(flushAutomatically = true, clearAutomatically = true)
 	@Query(value = """
 			update treatment_cases c join patients p on p.id = c.patient_id
 			set c.is_deleted = false, c.deleted_at = null, c.deleted_by = null,
-			    c.updated_by = :by, c.updated_at = now()
+			    c.updated_by = :actor, c.updated_at = now()
 			where p.id = :id and p.is_deleted = true and c.is_deleted = true and c.deleted_at = p.deleted_at
 			""", nativeQuery = true)
-	int restoreCasesDeletedWithPatient(@Param("id") String id, @Param("by") String by);
+	int restoreCasesDeletedWithPatient(@Param("id") String id, @Param("actor") String actor);
 
-	@Modifying
+	@Modifying(flushAutomatically = true, clearAutomatically = true)
 	@Query(value = """
 			update patients set is_deleted = false, deleted_at = null, deleted_by = null,
-			       updated_by = :by, updated_at = now()
+			       updated_by = :actor, updated_at = now()
 			where id = :id and is_deleted = true
 			""", nativeQuery = true)
-	int restorePatient(@Param("id") String id, @Param("by") String by);
+	int restorePatient(@Param("id") String id, @Param("actor") String actor);
 }
