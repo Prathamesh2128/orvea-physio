@@ -61,4 +61,12 @@ public interface AppointmentRepository extends JpaRepository<Appointment, UUID> 
 	Page<Appointment> search(@Param("date") LocalDate date, @Param("providerId") UUID providerId,
 			@Param("patientId") UUID patientId, @Param("status") AppointmentStatus status,
 			@Param("clinicId") UUID clinicId, Pageable pageable);
+
+	@Query("""
+			select a from Appointment a
+			where a.patientId in :ids and a.appointmentDate >= :from and a.status in :statuses
+			order by a.appointmentDate, a.startTime
+			""")
+	List<Appointment> findUpcomingForPatients(@Param("ids") Collection<UUID> ids, @Param("from") LocalDate from,
+			@Param("statuses") Collection<AppointmentStatus> statuses);
 }

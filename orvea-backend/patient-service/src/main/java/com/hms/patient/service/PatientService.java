@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.hms.common.api.PageResponse;
+import com.hms.common.audit.AuditPublisher;
 import com.hms.common.exception.DuplicateResourceException;
 import com.hms.common.exception.ResourceNotFoundException;
 import com.hms.common.security.AuthenticatedUser;
@@ -42,6 +43,7 @@ public class PatientService {
 	private final PatientRepository patientRepository;
 	private final UhidGenerator uhidGenerator;
 	private final TreatmentCaseRepository treatmentCaseRepository;
+	private final AuditPublisher audit;
 
 	@Transactional
 	public PatientResponse register(PatientRequest req) {
@@ -66,7 +68,11 @@ public class PatientService {
 		p.setUserId(req.userId());
 		p.setUhid(uhidGenerator.generate(clinicId));
 		p.setRegisteredOn(LocalDate.now());
-		return PatientMapper.toResponse(patientRepository.save(p));
+
+		Patient saved = patientRepository.save(p);
+		audit.record("PATIENT_REGISTERED", "Patient", saved.getId(),
+				Map.of("uhid", saved.getUhid(), "duplicateConfirmed", Boolean.TRUE.equals(req.confirmDuplicate())));
+		return PatientMapper.toResponse(saved);
 	}
 
 	@Transactional
@@ -126,6 +132,7 @@ public class PatientService {
 		}
 		apply(p, req);
 		p.setUserId(req.userId());
+		audit.record("PATIENT_UPDATED", "Patient", id, Map.of("uhid", p.getUhid()));
 		return PatientMapper.toResponse(p);
 	}
 
@@ -136,6 +143,7 @@ public class PatientService {
 		LocalDateTime at = LocalDateTime.now(); // one timestamp: lets restore bring the cases back too
 		treatmentCaseRepository.findByPatientId(id).forEach(c -> c.softDelete(by, at));
 		p.softDelete(by, at);
+		audit.record("PATIENT_DELETED", "Patient", id, Map.of("uhid", p.getUhid()));
 	}
 
 	@Transactional(readOnly = true)
@@ -161,6 +169,7 @@ public class PatientService {
 		String by = SecurityUtils.currentUsername();
 		patientRepository.restoreCasesDeletedWithPatient(id.toString(), by); // before the patient row changes
 		patientRepository.restorePatient(id.toString(), by);
+		audit.record("PATIENT_RESTORED", "Patient", id, Map.of("uhid", v.getUhid()));
 		return get(id);
 	}
 

@@ -17,8 +17,24 @@ public class BaseEvent {
 	private String eventId = UUID.randomUUID().toString();
 	private String eventType;
 	private String sourceService;
-	private Long clinicId;
+	private UUID clinicId;
 	private String performedBy;
 	private Instant occurredAt = Instant.now();
 	private Map<String, Object> payload;
+
+	/** Payload value as text, or null. */
+	public String text(String key) {
+		Object v = payload == null ? null : payload.get(key);
+		return v == null ? null : v.toString();
+	}
+
+	/** Payload value as UUID, or null when absent or malformed. */
+	public UUID uuid(String key) {
+		String v = text(key);
+		try {
+			return v == null || v.isBlank() ? null : UUID.fromString(v);
+		} catch (IllegalArgumentException e) {
+			return null;
+		}
+	}
 }

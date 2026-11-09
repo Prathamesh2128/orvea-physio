@@ -41,6 +41,14 @@ spring:
               uri: lb://audit-service
               predicates:
                 - Path=/api/v1/audit/**
+            - id: assessment-service
+              uri: lb://assessment-service
+              predicates:
+                - Path=/api/v1/assessments/**
+            - id: measurement-service
+              uri: lb://measurement-service
+              predicates:
+                - Path=/api/v1/measurements/**
   data:
     redis:
       host: ${REDIS_HOST:localhost}

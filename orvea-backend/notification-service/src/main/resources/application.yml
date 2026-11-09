@@ -1,0 +1,54 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: notification-service
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:3306/hms_notification?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: ${DB_USER:root}
+    password: ${DB_PASSWORD:pgdac}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP:localhost:9092}
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      acks: all
+      properties:
+        enable.idempotence: true
+      consumer:
+        group-id: ${spring.application.name}
+        key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        auto-offset-reset: earliest
+        enable-auto-commit: false
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${EUREKA_USER:eureka}:${EUREKA_PASSWORD:eureka123}@${EUREKA_HOST:localhost}:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+physio:
+  timezone: ${CLINIC_TZ:Asia/Kolkata}
+  notification:
+     # Base64, 32 bytes. Encrypts WhatsApp tokens stored in the DB. CHANGE IN PRODUCTION.
+     secret-key: ${NOTIFICATION_SECRET_KEY:MDEyMzQ1Njc4OWFiY2RlZjAxMjM0NTY3ODlhYmNkZWY=}
+     dispatch-poll-ms: 15000
+  whatsapp:
+    graph-base-url: https://graph.facebook.com
+    graph-version: ${WHATSAPP_GRAPH_VERSION:v23.0}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics

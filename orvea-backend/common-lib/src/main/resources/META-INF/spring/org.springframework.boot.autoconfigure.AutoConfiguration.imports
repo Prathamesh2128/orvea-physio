@@ -1,1 +1,3 @@
 com.hms.common.config.CommonAutoConfiguration
+com.hms.common.config.CommonAutoConfiguration
+com.hms.common.config.KafkaEventAutoConfiguration

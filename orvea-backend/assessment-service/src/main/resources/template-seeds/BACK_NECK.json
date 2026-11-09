@@ -1,0 +1,26 @@
+{
+  "code": "BACK_NECK",
+  "name": "Back and neck",
+  "description": "Back or neck complaint: history, nerve symptoms, posture",
+  "definition": { "sections": [
+    { "key": "history", "title": "History", "questions": [
+      { "key": "area", "type": "MULTI_CHOICE", "label": "Area", "required": true, "options": [
+        {"value":"neck","label":"Neck"},{"value":"upper_back","label":"Upper back"},{"value":"lower_back","label":"Lower back"} ] },
+      { "key": "work_type", "type": "SINGLE_CHOICE", "label": "Type of work", "options": [
+        {"value":"desk","label":"Desk / sitting"},{"value":"standing","label":"Standing"},{"value":"manual","label":"Manual / lifting"},{"value":"mixed","label":"Mixed"} ] },
+      { "key": "sitting_minutes", "type": "NUMBER", "label": "How long can you sit comfortably", "unit": "min", "min": 0, "max": 600 }
+    ]},
+    { "key": "nerves", "title": "Nerve symptoms", "questions": [
+      { "key": "radiating_pain", "type": "YES_NO", "label": "Pain travelling into arm or leg" },
+      { "key": "numbness", "type": "YES_NO", "label": "Numbness or tingling" },
+      { "key": "numbness_sites", "type": "BODY_MAP", "label": "Where?", "showIf": { "question": "numbness", "value": true } }
+    ]},
+    { "key": "posture", "title": "Posture", "questions": [
+      { "key": "head_forward", "type": "ANGLE", "label": "Head forward angle", "unit": "deg", "min": -90, "max": 90,
+        "capture": { "kind": "POSTURE", "angleKey": "head_forward_angle", "region": "NECK" } },
+      { "key": "shoulder_tilt", "type": "ANGLE", "label": "Shoulder line tilt", "unit": "deg", "min": -45, "max": 45,
+        "capture": { "kind": "POSTURE", "angleKey": "shoulder_tilt", "region": "SHOULDER" } },
+      { "key": "posture_note", "type": "TEXT", "label": "Posture notes", "maxLength": 300 }
+    ]}
+  ]}
+}

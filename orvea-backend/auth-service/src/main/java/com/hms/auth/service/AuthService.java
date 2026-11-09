@@ -22,6 +22,7 @@ import com.hms.auth.repository.UserRepository;
 import com.hms.auth.repository.UserSessionRepository;
 import com.hms.auth.util.HashUtil;
 import com.hms.auth.util.UserMapper;
+import com.hms.common.audit.AuditPublisher;
 import com.hms.common.exception.BusinessException;
 import com.hms.common.exception.ForbiddenException;
 import com.hms.common.exception.ResourceNotFoundException;
@@ -52,7 +53,8 @@ public class AuthService {
 	private final RefreshTokenRepository refreshTokenRepository;
 
 	private final SessionBlaklistService sessionBlaklistService;
-
+	private final AuditPublisher audit;
+	
 	// noRollbackFor: failed-attempt counters must be committed even when we throw
 	@Transactional(noRollbackFor = BusinessException.class)
 	public TokenResponse login(LoginRequest req, String ip, String userAgent) {

@@ -1,0 +1,20 @@
+{
+  "code": "POST_SURGERY",
+  "name": "After surgery",
+  "description": "Recovery after an operation",
+  "definition": { "sections": [
+    { "key": "surgery", "title": "Surgery", "questions": [
+      { "key": "procedure", "type": "TEXT", "label": "Procedure", "maxLength": 200, "required": true },
+      { "key": "surgery_date", "type": "DATE", "label": "Date of surgery" },
+      { "key": "surgeon_restrictions", "type": "TEXT", "label": "Restrictions from the surgeon", "maxLength": 400 },
+      { "key": "weight_bearing", "type": "SINGLE_CHOICE", "label": "Weight bearing", "options": [
+        {"value":"full","label":"Full"},{"value":"partial","label":"Partial"},{"value":"none","label":"None"},{"value":"as_advised","label":"As advised"} ] }
+    ]},
+    { "key": "wound", "title": "Wound", "questions": [
+      { "key": "wound_status", "type": "SINGLE_CHOICE", "label": "Wound", "options": [
+        {"value":"healed","label":"Healed"},{"value":"healing","label":"Healing well"},{"value":"discharge","label":"Discharge"},{"value":"infection_signs","label":"Signs of infection"} ] },
+      { "key": "stitches_removed", "type": "YES_NO", "label": "Stitches removed" },
+      { "key": "drain_present", "type": "YES_NO", "label": "Drain in place" }
+    ]}
+  ]}
+}

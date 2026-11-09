@@ -36,6 +36,8 @@ public class ReminderService {
 	private final ReminderPublisher publisher;
 	private final Clock clock;
 
+	private static final int MAX_ATTEMPTS = 3;
+
 	/**
 	 * One task per configured offset; offsets that are already in the past are
 	 * skipped.
@@ -105,9 +107,10 @@ public class ReminderService {
 			publisher.publish(msg);
 		} catch (Exception e) {
 			log.error("Reminder {} failed", taskId, e);
-			task.setStatus(ReminderStatus.FAILED);
 			String m = String.valueOf(e.getMessage());
 			task.setLastError(m.substring(0, Math.min(255, m.length())));
+			// the claim already counted this attempt; retry on the next poll,give up after 3 
+			task.setStatus(task.getAttempts() >= MAX_ATTEMPTS ? ReminderStatus.FAILED : ReminderStatus.PENDING);
 		}
 	}
 }

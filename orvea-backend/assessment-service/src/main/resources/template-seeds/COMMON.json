@@ -1,0 +1,30 @@
+{
+  "code": "COMMON",
+  "name": "Common assessment",
+  "description": "Asked for every patient, whatever the condition",
+  "definition": { "sections": [
+    { "key": "pain", "title": "Pain", "questions": [
+      { "key": "pain_now", "type": "SCALE", "label": "Pain right now (0 = none, 10 = worst)", "min": 0, "max": 10, "required": true },
+      { "key": "pain_worst", "type": "SCALE", "label": "Worst pain in the last 24 hours", "min": 0, "max": 10 },
+      { "key": "pain_sites", "type": "BODY_MAP", "label": "Where is the pain?" },
+      { "key": "pain_character", "type": "MULTI_CHOICE", "label": "How does it feel?", "options": [
+        {"value":"aching","label":"Aching"},{"value":"sharp","label":"Sharp"},{"value":"burning","label":"Burning"},
+        {"value":"throbbing","label":"Throbbing"},{"value":"tingling","label":"Tingling / numbness"} ] },
+      { "key": "pain_night", "type": "YES_NO", "label": "Does pain wake you at night?" }
+    ]},
+    { "key": "general", "title": "General", "questions": [
+      { "key": "sleep", "type": "SINGLE_CHOICE", "label": "Sleep since last visit", "options": [
+        {"value":"good","label":"Good"},{"value":"fair","label":"Fair"},{"value":"poor","label":"Poor"} ] },
+      { "key": "fatigue", "type": "SCALE", "label": "Tiredness today (0 = none, 10 = exhausted)", "min": 0, "max": 10 },
+      { "key": "medicine_changed", "type": "YES_NO", "label": "Any change in medicines?" },
+      { "key": "medicine_note", "type": "TEXT", "label": "What changed?", "maxLength": 300,
+        "showIf": { "question": "medicine_changed", "value": true } },
+      { "key": "recent_fall", "type": "YES_NO", "label": "Any fall since the last visit?" }
+    ]},
+    { "key": "function", "title": "Daily activities", "questions": [
+      { "key": "limitation", "type": "SINGLE_CHOICE", "label": "Difficulty with daily activities", "options": [
+        {"value":"none","label":"None"},{"value":"mild","label":"Mild"},{"value":"moderate","label":"Moderate"},{"value":"severe","label":"Severe"} ] },
+      { "key": "goal", "type": "TEXT", "label": "Patient's main goal", "maxLength": 300 }
+    ]}
+  ]}
+}

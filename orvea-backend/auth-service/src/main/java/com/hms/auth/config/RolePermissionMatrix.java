@@ -4,6 +4,9 @@ import static com.hms.common.enums.PermissionType.APPOINTMENT_CANCEL;
 import static com.hms.common.enums.PermissionType.APPOINTMENT_CREATE;
 import static com.hms.common.enums.PermissionType.APPOINTMENT_READ;
 import static com.hms.common.enums.PermissionType.APPOINTMENT_UPDATE;
+import static com.hms.common.enums.PermissionType.ASSESSMENT_CREATE;
+import static com.hms.common.enums.PermissionType.ASSESSMENT_READ;
+import static com.hms.common.enums.PermissionType.ASSESSMENT_UPDATE;
 import static com.hms.common.enums.PermissionType.BILLING_CREATE;
 import static com.hms.common.enums.PermissionType.BILLING_READ;
 import static com.hms.common.enums.PermissionType.BILLING_UPDATE;
@@ -22,6 +25,9 @@ import static com.hms.common.enums.PermissionType.ROLE_MANAGE;
 import static com.hms.common.enums.PermissionType.TREATMENT_CREATE;
 import static com.hms.common.enums.PermissionType.TREATMENT_READ;
 import static com.hms.common.enums.PermissionType.TREATMENT_UPDATE;
+import static com.hms.common.enums.PermissionType.MEASUREMENT_READ;
+import static com.hms.common.enums.PermissionType.MEASUREMENT_RECORD;
+import static com.hms.common.enums.PermissionType.MEASUREMENT_PLAN;
 
 import java.util.EnumSet;
 import java.util.Set;
@@ -53,12 +59,16 @@ public class RolePermissionMatrix {
 
 		case DOCTOR -> EnumSet.of(PATIENT_READ, PATIENT_UPDATE, APPOINTMENT_READ, APPOINTMENT_UPDATE, TREATMENT_CREATE,
 				TREATMENT_READ, TREATMENT_UPDATE, LYMPHEDEMA_CREATE, LYMPHEDEMA_READ, LYMPHEDEMA_UPDATE,
-				LYMPHEDEMA_COMPARE, REPORT_VIEW);
+				LYMPHEDEMA_COMPARE, REPORT_VIEW, ASSESSMENT_CREATE, ASSESSMENT_READ, ASSESSMENT_UPDATE,
+				MEASUREMENT_READ, MEASUREMENT_RECORD, MEASUREMENT_PLAN);
 
-		case PHYSIOTHERAPIST -> EnumSet.of(PATIENT_READ, APPOINTMENT_READ, TREATMENT_CREATE, TREATMENT_READ,
-				TREATMENT_UPDATE, LYMPHEDEMA_CREATE, LYMPHEDEMA_READ, LYMPHEDEMA_UPDATE, LYMPHEDEMA_COMPARE);
+		case PHYSIOTHERAPIST ->
+			EnumSet.of(PATIENT_READ, APPOINTMENT_READ, TREATMENT_CREATE, TREATMENT_READ, TREATMENT_UPDATE,
+					LYMPHEDEMA_CREATE, LYMPHEDEMA_READ, LYMPHEDEMA_UPDATE, LYMPHEDEMA_COMPARE, ASSESSMENT_CREATE,
+					ASSESSMENT_READ, ASSESSMENT_UPDATE, MEASUREMENT_READ, MEASUREMENT_RECORD, MEASUREMENT_PLAN);
 
-		case NURSE -> EnumSet.of(PATIENT_READ, APPOINTMENT_READ, TREATMENT_READ, LYMPHEDEMA_CREATE, LYMPHEDEMA_READ);
+		case NURSE -> EnumSet.of(PATIENT_READ, APPOINTMENT_READ, TREATMENT_READ, LYMPHEDEMA_CREATE, LYMPHEDEMA_READ,
+				ASSESSMENT_READ, MEASUREMENT_READ, MEASUREMENT_RECORD);
 
 		case RECEPTIONIST -> EnumSet.of(PATIENT_CREATE, PATIENT_READ, PATIENT_UPDATE, APPOINTMENT_CREATE,
 				APPOINTMENT_READ, APPOINTMENT_UPDATE, APPOINTMENT_CANCEL, BILLING_READ, NOTIFICATION_SEND);

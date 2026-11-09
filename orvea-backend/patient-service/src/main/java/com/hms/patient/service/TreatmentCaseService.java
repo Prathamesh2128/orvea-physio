@@ -14,6 +14,7 @@ import com.hms.common.exception.ResourceNotFoundException;
 import com.hms.common.security.ClinicScope;
 import com.hms.common.security.SecurityUtils;
 import com.hms.patient.client.StaffClient;
+import com.hms.patient.dto.CaseRef;
 import com.hms.patient.dto.CaseRequest;
 import com.hms.patient.dto.CaseResponse;
 import com.hms.patient.dto.CaseStatusRequest;
@@ -38,7 +39,7 @@ public class TreatmentCaseService {
 	private final PatientRepository patientRepository;
 	private final ConditionMasterRepository conditionMasterRepository;
 	private final StaffClient staffClient;
-	
+
 	@Transactional
 	public CaseResponse create(UUID patientId, CaseRequest req) {
 		Patient patient = loadPatient(patientId);
@@ -52,7 +53,7 @@ public class TreatmentCaseService {
 		c.setStatus(CaseStatus.PLANNED);
 		c.setCompletedSessions(0);
 		applyFields(c, req);
-        assignTherapist(c, req.primaryTherapistId());
+		assignTherapist(c, req.primaryTherapistId());
 
 		if (req.conditions() != null) {
 			req.conditions().forEach(cr -> attachCondition(c, cr));
@@ -84,9 +85,9 @@ public class TreatmentCaseService {
 					"Planned sessions cannot be lower than completed sessions (" + c.getCompletedSessions() + ")");
 		}
 		applyFields(c, req);
-        if (!Objects.equals(c.getPrimaryTherapistId(), req.primaryTherapistId())) {
-            assignTherapist(c, req.primaryTherapistId());
-        }
+		if (!Objects.equals(c.getPrimaryTherapistId(), req.primaryTherapistId())) {
+			assignTherapist(c, req.primaryTherapistId());
+		}
 		return PatientMapper.toResponse(c);
 	}
 
@@ -152,6 +153,16 @@ public class TreatmentCaseService {
 		return PatientMapper.toResponse(c);
 	}
 
+	/** Minimal view for other services (assessment-service). */
+	@Transactional(readOnly = true)
+	public CaseRef getRef(UUID patientId, UUID caseId) {
+		TreatmentCase c = loadCase(patientId, caseId);
+		return new CaseRef(c.getId(), patientId, c.getCaseNumber(), c.getStatus().name(), c.getBodyRegion().name(),
+				c.getLaterality() == null ? null : c.getLaterality().name(), c.getConditions().stream()
+						.filter(CaseCondition::isActive).map(CaseCondition::getConditionCode).toList(),
+				c.getPrimaryTherapistId());
+	}
+
 	// Helper Methods
 	private Patient loadPatient(UUID patientId) {
 		Patient p = patientRepository.findById(patientId)
@@ -203,15 +214,15 @@ public class TreatmentCaseService {
 		ClinicScope.assertSameClinic(c.getClinicId(), "Treatment case", caseId);
 		return c;
 	}
-	
-    private void assignTherapist(TreatmentCase c, UUID therapistId) {
-        if (therapistId == null) {
-            c.setPrimaryTherapistId(null);
-            c.setPrimaryTherapistName(null);
-            return;
-        }
-        StaffRef ref = staffClient.requireBookable(therapistId);   // exists, same clinic, active, treating role
-        c.setPrimaryTherapistId(therapistId);
-        c.setPrimaryTherapistName(ref.displayName());
-    }
+
+	private void assignTherapist(TreatmentCase c, UUID therapistId) {
+		if (therapistId == null) {
+			c.setPrimaryTherapistId(null);
+			c.setPrimaryTherapistName(null);
+			return;
+		}
+		StaffRef ref = staffClient.requireBookable(therapistId); // exists, same clinic, active, treating role
+		c.setPrimaryTherapistId(therapistId);
+		c.setPrimaryTherapistName(ref.displayName());
+	}
 }

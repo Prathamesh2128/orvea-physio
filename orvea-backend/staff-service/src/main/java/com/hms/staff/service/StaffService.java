@@ -2,6 +2,7 @@ package com.hms.staff.service;
 
 import java.util.EnumSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.hms.common.api.PageResponse;
+import com.hms.common.audit.AuditPublisher;
 import com.hms.common.enums.RoleType;
 import com.hms.common.exception.BusinessException;
 import com.hms.common.exception.DuplicateResourceException;
@@ -36,6 +38,7 @@ public class StaffService {
 			RoleType.NURSE, RoleType.RECEPTIONIST, RoleType.BILLING_STAFF, RoleType.CLINIC_ASSISTANT, RoleType.ADMIN);
 
 	private final StaffRepository repository;
+	private final AuditPublisher audit;
 
 	@Transactional
 	public StaffResponse create(StaffRequest req) {
@@ -48,7 +51,9 @@ public class StaffService {
 		s.setUserId(req.userId());
 		s.setStatus(StaffStatus.ACTIVE);
 		apply(s, req);
-		return StaffMapper.toResponse(repository.save(s));
+		Staff saved = repository.save(s);
+		audit.record("STAFF_CREATED", "Staff", saved.getId(), Map.of("staffType", saved.getStaffType().name()));
+		return StaffMapper.toResponse(saved);
 	}
 
 	@Transactional
@@ -60,6 +65,7 @@ public class StaffService {
 		}
 		s.setUserId(req.userId());
 		apply(s, req); // display name is recomputed (type or name may have changed)
+		audit.record("STAFF_UPDATED", "Staff", id, Map.of("staffType", s.getStaffType().name()));
 		return StaffMapper.toResponse(s);
 	}
 
@@ -86,6 +92,7 @@ public class StaffService {
 	public StaffResponse setStatus(UUID id, StaffStatus status) {
 		Staff s = find(id);
 		s.setStatus(status);
+		audit.record("STAFF_STATUS_CHANGED", "Staff", id, Map.of("status", status.name()));
 		return StaffMapper.toResponse(s);
 	}
 
@@ -94,6 +101,7 @@ public class StaffService {
 		Staff s = find(id);
 		s.setStatus(StaffStatus.INACTIVE);
 		s.softDelete(SecurityUtils.currentUsername());
+		audit.record("STAFF_DELETED", "Staff", id, Map.of());
 	}
 
 	@Transactional(readOnly = true)

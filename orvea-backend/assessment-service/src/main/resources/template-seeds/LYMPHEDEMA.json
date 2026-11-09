@@ -1,0 +1,33 @@
+{
+  "code": "LYMPHEDEMA",
+  "name": "Lymphedema",
+  "description": "Signs and symptoms. Circumference measurements are recorded in the measurement module.",
+  "definition": { "sections": [
+    { "key": "overview", "title": "Overview", "questions": [
+      { "key": "affected_limb", "type": "SINGLE_CHOICE", "label": "Affected area", "required": true, "options": [
+        {"value":"left_arm","label":"Left arm"},{"value":"right_arm","label":"Right arm"},{"value":"left_leg","label":"Left leg"},
+        {"value":"right_leg","label":"Right leg"},{"value":"head_neck","label":"Head / neck"},{"value":"trunk","label":"Trunk / breast"} ] },
+      { "key": "stage", "type": "SINGLE_CHOICE", "label": "Stage", "options": [
+        {"value":"0","label":"0 - latent"},{"value":"1","label":"1 - reversible"},{"value":"2","label":"2 - spontaneously irreversible"},{"value":"3","label":"3 - elephantiasis"} ] },
+      { "key": "swelling_trend", "type": "SINGLE_CHOICE", "label": "Swelling compared with last visit", "options": [
+        {"value":"better","label":"Better"},{"value":"same","label":"Same"},{"value":"worse","label":"Worse"} ] }
+    ]},
+    { "key": "signs", "title": "Signs and symptoms", "questions": [
+      { "key": "heaviness", "type": "YES_NO", "label": "Heaviness" },
+      { "key": "tightness", "type": "YES_NO", "label": "Tightness" },
+      { "key": "pitting", "type": "YES_NO", "label": "Pitting on pressure" },
+      { "key": "skin_hardening", "type": "YES_NO", "label": "Skin hardening" },
+      { "key": "redness_warmth", "type": "YES_NO", "label": "Redness or warmth" },
+      { "key": "fever", "type": "YES_NO", "label": "Fever" },
+      { "key": "stemmer_sign", "type": "SINGLE_CHOICE", "label": "Stemmer sign", "options": [
+        {"value":"positive","label":"Positive"},{"value":"negative","label":"Negative"},{"value":"not_tested","label":"Not tested"} ] }
+    ]},
+    { "key": "skin_nerves", "title": "Skin and nerves", "questions": [
+      { "key": "skin_condition", "type": "MULTI_CHOICE", "label": "Skin condition", "options": [
+        {"value":"normal","label":"Normal"},{"value":"dry","label":"Dry"},{"value":"cracked","label":"Cracked"},
+        {"value":"wound","label":"Wound"},{"value":"infection_signs","label":"Signs of infection"} ] },
+      { "key": "neuropathy", "type": "YES_NO", "label": "Numbness or tingling in hands or feet" },
+      { "key": "neuropathy_sites", "type": "BODY_MAP", "label": "Where?", "showIf": { "question": "neuropathy", "value": true } }
+    ]}
+  ]}
+}

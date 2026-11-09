@@ -2,6 +2,7 @@ package com.hms.auth.service;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
@@ -20,6 +21,7 @@ import com.hms.auth.repository.RoleRepository;
 import com.hms.auth.repository.UserRepository;
 import com.hms.auth.util.UserMapper;
 import com.hms.common.api.PageResponse;
+import com.hms.common.audit.AuditPublisher;
 import com.hms.common.enums.RoleType;
 import com.hms.common.exception.BusinessException;
 import com.hms.common.exception.DuplicateResourceException;
@@ -38,6 +40,7 @@ public class UserService {
 	private final UserRepository userRepository;
 	private final RoleRepository roleRepository;
 	private final AuthService authService;
+	private final AuditPublisher audit;
 
 	@Transactional
 	public UserResponse create(CreateUserRequest req) {
@@ -60,7 +63,11 @@ public class UserService {
 		user.setRoles(roles);
 		user.setClinicId(req.clinicId() != null ? req.clinicId()
 				: SecurityUtils.currentUser().map(AuthenticatedUser::clinicId).orElse(null));
-		return UserMapper.toResponse(userRepository.save(user));
+
+		User saved = userRepository.save(user);
+		audit.record("USER_CREATED", "User", saved.getId(),
+				Map.of("roles", roles.stream().map(r -> r.getName().name()).sorted().toList()));
+		return UserMapper.toResponse(saved);
 	}
 
 	@Transactional(readOnly = true)
@@ -96,6 +103,7 @@ public class UserService {
 			if (!req.enabled())
 				authService.logoutAll(id);
 		}
+		audit.record("USER_UPDATED", "User", id, Map.of());
 		return UserMapper.toResponse(user);
 	}
 
@@ -104,6 +112,8 @@ public class UserService {
 		User user = find(id);
 		user.setRoles(resolveRoles(roleTypes));
 		authService.logoutAll(id); // permissions changed: force new token
+		audit.record("USER_ROLES_CHANGED", "User", id,
+				Map.of("roles", roleTypes.stream().map(Enum::name).sorted().toList()));
 		return UserMapper.toResponse(user);
 	}
 
@@ -122,12 +132,14 @@ public class UserService {
 		user.setEmail(user.getEmail() + suffix);
 		user.setEnabled(false);
 		user.softDelete(SecurityUtils.currentUsername());
+		audit.record("USER_DELETED", "User", id, Map.of());
 	}
 
 	@Transactional
 	public void forceLogout(UUID id) {
 		find(id);
 		authService.logoutAll(id);
+		audit.record("USER_FORCE_LOGOUT", "User", id, Map.of());
 	}
 
 	// Helper methods

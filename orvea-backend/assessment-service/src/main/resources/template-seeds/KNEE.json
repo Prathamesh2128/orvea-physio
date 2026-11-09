@@ -1,0 +1,25 @@
+{
+  "code": "KNEE",
+  "name": "Knee",
+  "description": "Knee complaint: history and findings",
+  "definition": { "sections": [
+    { "key": "history", "title": "History", "questions": [
+      { "key": "side", "type": "SINGLE_CHOICE", "label": "Which knee", "required": true, "options": [
+        {"value":"left","label":"Left"},{"value":"right","label":"Right"},{"value":"both","label":"Both"} ] },
+      { "key": "onset", "type": "SINGLE_CHOICE", "label": "How did it start", "options": [
+        {"value":"injury","label":"Injury"},{"value":"gradual","label":"Gradually"},{"value":"after_surgery","label":"After surgery"} ] }
+    ]},
+    { "key": "findings", "title": "Findings", "questions": [
+      { "key": "swelling", "type": "YES_NO", "label": "Swelling" },
+      { "key": "locking", "type": "YES_NO", "label": "Locking or giving way" },
+      { "key": "rom_flexion", "type": "ANGLE", "label": "Bending (flexion)", "unit": "deg", "min": 0, "max": 180,
+        "capture": { "kind": "ROM", "angleKey": "knee_flexion", "region": "KNEE" } },
+      { "key": "rom_extension", "type": "ANGLE", "label": "Straightening (extension)", "unit": "deg", "min": -30, "max": 30,
+        "capture": { "kind": "ROM", "angleKey": "knee_extension", "region": "KNEE" } },
+      { "key": "walking_aid", "type": "SINGLE_CHOICE", "label": "Walking aid", "options": [
+        {"value":"none","label":"None"},{"value":"stick","label":"Stick"},{"value":"walker","label":"Walker"},{"value":"crutches","label":"Crutches"} ] },
+      { "key": "stairs", "type": "SINGLE_CHOICE", "label": "Climbing stairs", "options": [
+        {"value":"easy","label":"Easy"},{"value":"some_difficulty","label":"Some difficulty"},{"value":"unable","label":"Unable"} ] }
+    ]}
+  ]}
+}

@@ -1,0 +1,22 @@
+{
+  "code": "SHOULDER",
+  "name": "Shoulder",
+  "description": "Shoulder complaint: history and findings",
+  "definition": { "sections": [
+    { "key": "history", "title": "History", "questions": [
+      { "key": "side", "type": "SINGLE_CHOICE", "label": "Which shoulder", "required": true, "options": [
+        {"value":"left","label":"Left"},{"value":"right","label":"Right"},{"value":"both","label":"Both"} ] },
+      { "key": "dominant_hand", "type": "SINGLE_CHOICE", "label": "Dominant hand", "options": [
+        {"value":"left","label":"Left"},{"value":"right","label":"Right"} ] },
+      { "key": "instability", "type": "YES_NO", "label": "Feels unstable or slips out" }
+    ]},
+    { "key": "findings", "title": "Findings", "questions": [
+      { "key": "overhead_pain", "type": "YES_NO", "label": "Pain when lifting the arm overhead" },
+      { "key": "rom_flexion", "type": "ANGLE", "label": "Lifting forward (flexion)", "unit": "deg", "min": 0, "max": 200,
+        "capture": { "kind": "ROM", "angleKey": "shoulder_flexion", "region": "SHOULDER" } },
+      { "key": "rom_abduction", "type": "ANGLE", "label": "Lifting sideways (abduction)", "unit": "deg", "min": 0, "max": 200,
+        "capture": { "kind": "ROM", "angleKey": "shoulder_abduction", "region": "SHOULDER" } },
+      { "key": "weakness", "type": "YES_NO", "label": "Weakness when lifting or gripping" }
+    ]}
+  ]}
+}
